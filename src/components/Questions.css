@@ -1,0 +1,21 @@
+.box-field{
+    width: 100%;
+    display: inline-flex;
+    padding: 10px;
+}
+
+.column-field{
+    display: block;
+}
+
+.marked{
+    background-color: black;
+    color: white;
+    margin-right: 10px;
+}
+
+.name{
+    background-color: pink;
+    margin-right: 10px;
+}
+
