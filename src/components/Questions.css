@@ -8,6 +8,10 @@
     display: block;
 }
 
+input{
+    margin-right: 10px;
+}
+
 .marked{
     background-color: black;
     color: white;

@@ -1,3 +1,15 @@
+.main{
+    padding: 10px;
+}
+
+.prompt{
+    padding: 10px;
+}
+
+.example{
+    padding: 10px;
+}
+
 .space{
     height: 50px;
 }
