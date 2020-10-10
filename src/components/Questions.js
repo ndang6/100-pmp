@@ -14,7 +14,7 @@ function Questions() {
                         <p className='marked'>Mark Reviewed</p>
                         <input type="checkbox" />
                         <p className='name'>{name}</p>
-                        <Link to={'/' + name}><i class="fas fa-biking"></i></Link>
+                        <Link to={'/page2/' + name}><i class="fas fa-biking"></i></Link>
                     </div> 
                 )
             })}                 

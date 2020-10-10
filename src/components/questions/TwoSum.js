@@ -22,15 +22,17 @@ import Timer from '../Timer'
 function TwoSum() {
     const name = "Two Sum"
     const hyperLink = "https://leetcode.com/problems/two-sum/"
-    const hashTags = "#hash-map"
+    const solution = "https://leetcode.com/problems/two-sum/solution/"
+    const hashTags = "#array #hash-map"
     const [code, setCode] = useState(
-        "// nums = [2,7,11,15], target = 9\n// returns [0,1]\nClass Solution {\n\tpublic int[] twoSum(int[] nums, int target) {\n\t\t\n\t}\n}\n"
+        "// nums = [2,7,11,15], target = 9\n// returns [0,1]\nclass Solution {\n\tpublic int[] twoSum(int[] nums, int target) {\n\t\t\n\t}\n}\n"
     )
 
     return (
         <div>
             <h1 class="title">{name}</h1>
             <h5 class="tag">{hashTags}</h5>
+
             <div class = "main">
                 <div class="main1">              
                     <p class="prompt">
@@ -45,7 +47,7 @@ function TwoSum() {
                             lineWrapping: true,
                             smartIndent: true,
                             lineNumbers: true,
-                            foldGutter: true,
+                            
                             gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
                             autoCloseTags: true,
                             keyMap: "sublime",
@@ -61,18 +63,31 @@ function TwoSum() {
                           onChange={(editor, data, value) => {
                               setCode(value);
                           }}
-                    />              
-                    {/* <CodeArea props={template}/>                */}
+                    />   
+
                     <Timer /> 
-                    <button onClick={() => { navigator.clipboard.writeText(code) }}>Copy</button>
-                    <a href={hyperLink}>Test it on leetcode.com</a> 
+                    <div class="foot">                      
+                        <button onClick={() => { navigator.clipboard.writeText(code) }}>Copy Your Code</button>
+                        <a class="leetcode" target="_blank" rel="noopener noreferrer" href={hyperLink}>Test it on leetcode.com</a> 
+                        <a class="leetcode" target="_blank" rel="noopener noreferrer" href={solution}>Solution</a> 
+                    </div>
+                
                 </div>
                 <div class="main2">
-                     <div class="example">
-                        <p>Example</p>
-                    </div>
-
                     <img src="/images/two-sum.png" alt="hash map" width="500" height="600"/>
+                
+                    <div class="hint1">
+                        <button>Hint 1</button>
+                        <p>This is hint 1</p>
+                    </div>
+                    <div class="hint2">
+                        <button>Hint 2</button>
+                        <p>This is hint 2</p>
+                    </div>
+                    <div class="hint3">
+                        <button>Hint 3</button>
+                        <p>This is hint 3</p>
+                    </div>                   
                 </div>
             </div>          
         </div>

@@ -3,7 +3,7 @@ import './style.css'
 import Timer from '../Timer'
 import CodeArea from '../CodeArea'
 
-function numberOfIslands() {
+function NumberOfIslands() {
     const template = "Class Solution {\n\tpublic int numIslands(char[][] grid) {\n\t\t\n\t}\n}"  
 
     return (
@@ -44,4 +44,4 @@ function numberOfIslands() {
     )
 }
 
-export default numberOfIslands
+export default NumberOfIslands

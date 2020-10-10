@@ -3,7 +3,7 @@ import './style.css'
 import Timer from '../Timer'
 import CodeArea from '../CodeArea'
 
-function reorderDataInLogFiles() {
+function ReorderDataInLogFiles() {
     const template = "Class Solution {\n\tpublic String[] reorderLogFiles(String[] logs) {\n\t\t\n\t}\n}"  
 
     return (
@@ -41,4 +41,4 @@ function reorderDataInLogFiles() {
     )
 }
 
-export default reorderDataInLogFiles
+export default ReorderDataInLogFiles

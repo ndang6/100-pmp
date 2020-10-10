@@ -3,7 +3,7 @@ import './style.css'
 import Timer from '../Timer'
 import CodeArea from '../CodeArea'
 
-function addTwoNumbers() {
+function AddTwoNumbers() {
     const template = "Class Solution {\n\tpublic ListNode addTwoNumbers(ListNode l1, ListNode l2) {\n\t\t\n\t}\n}"  
     const name = "Add Two Numbers"
     const hyperLink = "https://leetcode.com/problems/add-two-numbers/"
@@ -43,6 +43,6 @@ function addTwoNumbers() {
 
 }
 
-export default addTwoNumbers
+export default AddTwoNumbers
 
 

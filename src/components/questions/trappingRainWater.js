@@ -3,7 +3,7 @@ import './style.css'
 import Timer from '../Timer'
 import CodeArea from '../CodeArea'
 
-function trappingRainWater() {
+function TrappingRainWater() {
     const template = "Class Solution {\n\tpublic int trap(int[] height) {\n\t\t\n\t}\n}"  
 
     return (
@@ -32,4 +32,4 @@ function trappingRainWater() {
     )
 }
 
-export default trappingRainWater
+export default TrappingRainWater

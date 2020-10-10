@@ -2,7 +2,7 @@ import React from 'react'
 import './style.css'
 import CodeArea from '../CodeArea'
 
-function lruCache() {
+function LruCache() {
     const template = "Class Solution {\n\tpublic int[] twoSum(int[] nums, int target) {\n\t\t\n\t}\n}"  
     const name = "LRU Cache"
     const hyperLink = "https://leetcode.com/problems/lru-cache/"
@@ -37,4 +37,4 @@ function lruCache() {
     )
 }
 
-export default lruCache
+export default LruCache

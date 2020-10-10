@@ -17,6 +17,8 @@
 .CodeMirror {
     font-family: Arial, monospace;
     font-size: 18px;
+    letter-spacing: 0.8px;
+    height: 500px !important;
 }
 
 .title{
@@ -29,15 +31,8 @@
     justify-content: center;
 }
 
-.example{
-    background-color: goldenrod;
-    display: flex;
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
 .prompt{
-    background-color: pink;
+    background-color: cadetblue;
     font-size: 18px;
     text-align: left;
     justify-content: left;
@@ -47,9 +42,39 @@ p{
     white-space: pre-line;
 }
 
-
 img{
     height: auto;
     width: auto;
+}
+
+.hint1, .hint2, .hint3{
+    display: flex;
+}
+
+.hint1 button, .hint2 button, .hint3 button{
+    background-color: cadetblue;
+}
+
+.hint1 p, .hint2 p, .hint3 p{
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.foot button, .leetcode:link, .leetcode:visited {
+    background-color: cadetblue;
+    color: white;
+    font-size: 15px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+
+.foot{
+    display: flex;
 }
 

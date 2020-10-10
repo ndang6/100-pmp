@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './Timer.css'
 
 export default class Timer extends Component {
     state = {
@@ -12,6 +13,7 @@ export default class Timer extends Component {
 
             if(minutes === 3 && seconds === 0){
                 document.getElementsByClassName("timer")[0].style.backgroundColor = "red";
+                document.getElementsByClassName("timer")[0].style.color = "white";
             }
 
             if (seconds > 0) {
@@ -42,8 +44,8 @@ export default class Timer extends Component {
             <div>
                 
                 { minutes === 0 && seconds === 0
-                    ? <h1>Time to Submit!</h1>
-                    : <h1 class="timer">Time Remaining: {minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1>
+                    ? <p class="timer">Time to Submit!</p>
+                    : <p class="timer">Time Remaining: {minutes}:{seconds < 10 ? `0${seconds}` : seconds}</p>
                 }
             </div>
         )

@@ -25,6 +25,7 @@ function CodeArea(props) {
 
     return (
         <div>
+            <textarea class="code" onKeyDown={handleKeyDown} spellcheck="false" onChange={handleChange}>{props.template}</textarea>
             <Timer /> 
             <button onClick={() => { navigator.clipboard.writeText(codeValue) }}>Copy</button>
         </div>
