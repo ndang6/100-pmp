@@ -17,7 +17,6 @@
 
 .CodeMirror {
     font-family: Arial, monospace;
-    font-size: 18px;
     letter-spacing: 0.8px;
     height: 500px !important;
 }
@@ -25,6 +24,7 @@
 .title{
     text-align: center;
     justify-content: center;
+    margin-top: 10px;
 }
 
 .tag{
@@ -47,6 +47,21 @@ img{
     height: auto;
     width: auto;
 }
+
+.main1 button{
+    font-size: 20px;
+    font-weight: 400;
+    padding: 5px;
+    margin: 5px;
+    background-color: white;
+    color: black
+}
+
+.main1 .buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
 
 .hint1, .hint2, .hint3{
     display: flex;

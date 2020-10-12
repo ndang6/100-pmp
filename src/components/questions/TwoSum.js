@@ -34,9 +34,7 @@ function TwoSum() {
 
     const hint1 = <p> Map&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;()</p>
     const hint2 = <p>map.get, map.put, map.containsKey</p>
-    const hint3 = <p>throw new IllegalArgumentException("No solutions")</p>
-
-    
+    const hint3 = <p>throw new IllegalArgumentException("No solutions")</p>    
 
     /* --DO NOT MODIFY--------------------------------------------------------------------------------------- */
     const [hint1Flag, setHint1] = useState(false);
@@ -46,6 +44,18 @@ function TwoSum() {
     const showHint1 = () => setHint1(!hint1Flag);
     const showHint2 = () => setHint2(!hint2Flag);
     const showHint3 = () => setHint3(!hint3Flag);
+
+    var fontSize = 17
+
+    const increaseFontSize = () => {
+        fontSize = fontSize + 1
+        document.getElementsByClassName("main")[0].getElementsByClassName("main1")[0].children[1].style.fontSize = fontSize + "px";
+    }
+
+    const decreaseFontSize = () => {
+        fontSize = fontSize - 1
+        document.getElementsByClassName("main")[0].getElementsByClassName("main1")[0].children[1].style.fontSize = fontSize + "px";       
+    }
 
     const hyperLink = "https://leetcode.com/problems/" + name.toLowerCase().replace(" ", "-")
     const solution = hyperLink + "/solution"
@@ -60,8 +70,10 @@ function TwoSum() {
                 <div class="main1">              
                     <p class="prompt">
                         {prompt}
-                    </p>   
-                    <CodeMirror value={code} 
+                    </p> 
+                    
+                    <CodeMirror 
+                        value={code} 
                         options = {{
                             mode: "text/x-java",
                             theme: "abcdef",
@@ -84,7 +96,15 @@ function TwoSum() {
                             setCode(value);
                         }}
                     />   
-                    <Timer /> 
+                    
+                    <div class="buttons">
+                        <Timer />
+                        <div>
+                            <button onClick={increaseFontSize}>+</button>  
+                            <button onClick={decreaseFontSize}>-</button>
+                        </div>                                                                
+                    </div>
+                      
                     <div class="foot">                      
                         <button onClick={() => { navigator.clipboard.writeText(code) }}>Copy Your Code</button>
                         <a class="leetcode" target="_blank" rel="noopener noreferrer" href={hyperLink}>Test it on leetcode.com</a> 

@@ -1,25 +1,28 @@
 .box-field{
     width: 100%;
-    display: inline-flex;
+    display: flex;
     padding: 10px;
+    margin: 10px;
+    background-color: antiquewhite;
+    font-size: 20px;
+    width: fit-content;
 }
 
 .column-field{
     display: block;
 }
 
-input{
-    margin-right: 10px;
+input[type=checkbox]{
+    margin-right: 50px;   
 }
 
 .marked{
-    background-color: black;
-    color: white;
+    display: flex;
+    color: black;
     margin-right: 10px;
 }
 
 .name{
-    background-color: pink;
     margin-right: 10px;
 }
 

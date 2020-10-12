@@ -17,13 +17,13 @@ function HeroSection() {
         >
           GET STARTED <i className='far fa-play-circle' />
         </Button>
-        <Button
+        {/* <Button
           className='btns'
           buttonStyle='btn--outline'
           buttonSize='btn--large'
         >
-          TRANING FIRST
-        </Button>       
+          ALL QUESTIONS
+        </Button>        */}
       </div>
     </div>
   );
