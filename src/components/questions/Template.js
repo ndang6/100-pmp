@@ -18,25 +18,24 @@ import "codemirror/addon/fold/comment-fold";
 import "codemirror/addon/fold/foldgutter.css";
 import Timer from '../Timer'
 
-function TwoSum() {
-    const name = "Two Sum"   
-    const hashTags = "#array #hash-map"
-    const headerSignature = "public int[] twoSum(int[] nums, int target)"
+    const name = ""
+    const hashTags = "#tags"
+    const headerSignature = ""
 
+    // \n
     // eslint-disable-next-line no-multi-str
     const prompt = "Given nums and  target, return indices of the two numbers such that they add up to target.\n \
                     This problem has exactly one solution.\n \
                     You cannot use the same element twice. You can return the answer in any order."
-
+                    
     const [code, setCode] = useState(
         "// nums = [2,7,11,15], target = 9\n// returns [0,1]\nclass Solution {\n\t" + headerSignature + "{\n\t\t\n\t}\n}\n"
-    )                
+    )
 
-    const hint1 = <p> Map&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;()</p>
-    const hint2 = <p>map.get, map.put, map.containsKey</p>
-    const hint3 = <p>throw new IllegalArgumentException("No solutions")</p>
-
-    
+    // &lt;
+    const hint1 = <p>Hint 1</p>
+    const hint2 = <p>Hint 2</p>
+    const hint3 = <p>Hint 3</p>
 
     /* --DO NOT MODIFY--------------------------------------------------------------------------------------- */
     const [hint1Flag, setHint1] = useState(false);
@@ -57,7 +56,7 @@ function TwoSum() {
             <h5 class="tag">{hashTags}</h5>
 
             <div class = "main">
-                <div class="main1">              
+                <div class="main1">   
                     <p class="prompt">
                         {prompt}
                     </p>   
@@ -111,6 +110,4 @@ function TwoSum() {
             </div>          
         </div>
     )
-}
 
-export default TwoSum

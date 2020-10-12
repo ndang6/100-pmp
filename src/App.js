@@ -11,6 +11,7 @@ import TrappingRainWater from './components/questions/TrappingRainWater';
 import NumberOfIslands from './components/questions/NumberOfIslands';
 import ReorderDataInLogFiles from './components/questions/ReorderDataInLogFiles';
 import LruCache from './components/questions/LruCache';
+import LongestPalindromicSubstring from './components/questions/LongestPalindromicSubstring';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path='/page2/trapping-rain-water' exact component={TrappingRainWater} />
           <Route path='/page2/reorder-data-in-log-files' exact component={ReorderDataInLogFiles} />
           <Route path='/page2/lru-cache' exact component={LruCache} />
+          <Route path='/page2/longest-palindromic-substring' exact component={LongestPalindromicSubstring} />
         </Switch>
       </Router>
     </>

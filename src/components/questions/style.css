@@ -12,6 +12,7 @@
 .main2{
     /* background-color: powderblue; */
     width: 50%;
+    margin-left: 10px;
 }
 
 .CodeMirror {
@@ -49,6 +50,7 @@ img{
 
 .hint1, .hint2, .hint3{
     display: flex;
+    margin: 10px;
 }
 
 .hint1 button, .hint2 button, .hint3 button{
@@ -60,6 +62,7 @@ img{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: 10px;
 }
 
 .foot button, .leetcode:link, .leetcode:visited {
