@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../../App.scss';
-// import Cards from '../Cards';
 import HeroSection from '../HeroSection';
-// import Footer from '../Footer';
+import { AuthContext } from './Auth'
 
 function Home() {
+  const { currentUser } = useContext(AuthContext);
+
+  // if(currentUser){
+  //   console.log("Logged In, from Home");
+  // }
+
   return (
     <>
       <HeroSection />
-      {/* <Cards /> */}
-      {/* <Footer /> */}
     </>
   );
 }

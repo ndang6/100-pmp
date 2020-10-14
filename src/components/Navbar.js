@@ -1,11 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
+import { AuthContext } from '../components/pages/Auth'
+
 
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
+  const { currentUser } = useContext(AuthContext);
+
+  if(currentUser){
+    console.log("Logged In, from Navbar");
+  }
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -27,10 +34,11 @@ function Navbar() {
   return (
     <>
       <nav className='navbar'>
-        <div className='navbar-container'>
+        <div className='navbar-container'> 
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-            100-PMP 
-            <i class="fas fa-code"></i>
+            <i className="fas fa-dumbbell"></i>
+            <h3>Code Workout</h3> 
+            <i className="fas fa-dumbbell"></i>
           </Link>
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
@@ -43,7 +51,7 @@ function Navbar() {
             </li>
             <li className='nav-item'>
               <Link
-                to='/page1'
+                to='/challenge'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
@@ -52,25 +60,24 @@ function Navbar() {
             </li>
             <li className='nav-item'>
               <Link
-                to='/page2'
+                to='/questions'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
                 Questions
               </Link>
             </li>
-
-            <li>
-              <Link
-                to='/sign-up'
-                className='nav-links-mobile'
-                onClick={closeMobileMenu}
-              >
-                Sign Up
-              </Link>
-            </li>
+            {currentUser ? <i className="nav-links fas fa-crown"></i> : <li>
+                <Link
+                  to='/signup'
+                  className='nav-links'
+                  onClick={closeMobileMenu}
+                >
+                  Sign Up
+                </Link>
+            </li>}
           </ul>
-          {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
+          {/* {button && <Button buttonStyle='btn--outline'>LOG IN</Button>} */}
         </div>
       </nav>
     </>

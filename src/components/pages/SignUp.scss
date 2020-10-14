@@ -13,7 +13,7 @@ $primary: #4D6FE5;
 		font-weight: 700;
 		margin: 0 auto 60px auto;
 		position: relative;
-		height: 30px;
+		height: 32px;
 		width: 250px;
 		overflow: hidden;
 	}
@@ -30,11 +30,11 @@ $primary: #4D6FE5;
 		margin: 3px 0;
 	}
 
-	&.sign-in{
+	&.sign-up{
 		transform: translateY(0);
 	}
 	
-	&.sign-up{
+	&.sign-in{
 		transform: translateY(-30px);
 	}
 	

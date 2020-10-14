@@ -10,11 +10,17 @@
     padding: 10px;
 }
 
-.space{
-    height: 50px;
+.challenge{
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
 }
 
-img{
+.challenge > button {
+    margin-top: 10px;   
+}
+
+.displayed{
     height: 100px;
     width: 100px;
     display: block;
