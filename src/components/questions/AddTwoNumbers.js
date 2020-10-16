@@ -30,7 +30,7 @@ function AddTwoNumbers() {
                     Add the two numbers and return the sum as a linked list."
                     
     const [code, setCode] = useState(
-        "// l1 = [2,4,3], l2 = [5,6,4]\n// returns [7,0,8]\nclass Solution {\n\t" + headerSignature + "{\n\t\t\n\t}\n}\n"
+        "// l1 = [2,4,3], l2 = [5,6,4]\n// returns [7,0,8]\n// l1.val, l2.val\nclass Solution {\n\t" + headerSignature + "{\n\t\t\n\t}\n}\n"
     )
 
     // &lt;
@@ -59,9 +59,10 @@ function AddTwoNumbers() {
         document.getElementsByClassName("main")[0].getElementsByClassName("main1")[0].children[1].style.fontSize = fontSize + "px";       
     }
 
-    const hyperLink = "https://leetcode.com/problems/" + name.toLowerCase().replaceAll(" ", "-")
-    const solution = hyperLink + "/solution"
-    const imgPath = "/images/" + name.toLowerCase().replaceAll(" ", "-") + ".png"
+    const formattedName = name.toLowerCase().replaceAll(" ", "-")
+    const hyperLink = "https://leetcode.com/problems/" + formattedName
+    const solution =  "https://github.com/ndang6/code-workout-solutions/blob/main/" + formattedName + ".java"
+    const imgPath = "/images/" + formattedName + ".png"
     
     return (
         <div>
@@ -108,7 +109,7 @@ function AddTwoNumbers() {
                     <div class="foot">                      
                         <button onClick={() => { navigator.clipboard.writeText(code) }}>Copy Your Code</button>
                         <a class="leetcode" target="_blank" rel="noopener noreferrer" href={hyperLink}>Test it on leetcode.com</a> 
-                        <a class="leetcode" target="_blank" rel="noopener noreferrer" href={solution}>Solution</a> 
+                        <a class="leetcode" target="_blank" rel="noopener noreferrer" href={solution}>Suggested Solution</a> 
                     </div>
                 
                 </div>

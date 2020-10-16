@@ -44,6 +44,8 @@ p{
 }
 
 img{
+    max-width: 800px;
+    max-height: 500px;
     height: auto;
     width: auto;
 }
@@ -62,7 +64,6 @@ img{
     justify-content: space-between;
 }
 
-
 .hint1, .hint2, .hint3{
     display: flex;
     margin: 10px;
@@ -70,6 +71,10 @@ img{
 
 .hint1 button, .hint2 button, .hint3 button{
     background-color: cadetblue;
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+    border: none;
 }
 
 .hint1 p, .hint2 p, .hint3 p{
@@ -89,6 +94,7 @@ img{
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    border: none;
   }
   
 

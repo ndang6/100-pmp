@@ -1,44 +1,143 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './style.css'
+import { Controlled as CodeMirror } from "react-codemirror2";
+import "codemirror/lib/codemirror.css";
+import "codemirror/theme/abcdef.css";
+import "codemirror/mode/clike/clike";
+import "codemirror/addon/hint/show-hint";
+import "codemirror/addon/comment/comment";
+import "codemirror/addon/hint/javascript-hint";
+import "codemirror/addon/hint/show-hint.css";
+import "codemirror/keymap/sublime";
+import "codemirror/addon/edit/closebrackets";
+import "codemirror/addon/edit/closetag";
+import "codemirror/addon/fold/foldcode";
+import "codemirror/addon/fold/foldgutter";
+import "codemirror/addon/fold/brace-fold";
+import "codemirror/addon/fold/comment-fold";
+import "codemirror/addon/fold/foldgutter.css";
 import Timer from '../Timer'
-import CodeArea from '../CodeArea'
 
 function ReorderDataInLogFiles() {
-    const template = "Class Solution {\n\tpublic String[] reorderLogFiles(String[] logs) {\n\t\t\n\t}\n}"  
+    const name = "Reorder Data in Log Files"
+    const hashTags = "#Arrays.sort()"
+    const headerSignature = "public String[] reorderLogFiles(String[] logs)"
 
+    // \n
+    // eslint-disable-next-line no-multi-str
+    const prompt = "For each log, the first word in each log is an alphanumeric identifier.\n \
+                    Each word after the identifier will consist only of letters (letter-logs), or digits (digit-logs).\n \
+                    Reorder the logs: all of the letter-logs (in case of tie, use identifier) come before any digit-log.\n \
+                    The digit-logs should be put in their original order."
+                    
+    const [code, setCode] = useState(
+        "// logs =   [\"dig1 8 1 5 1\",\"let1 art can\",\"dig2 3 6\",\"let2 own kit dig\",\"let3 art zero\"]\n// returns [\"let1 art can\",\"let3 art zero\",\"let2 own kit dig\",\"dig1 8 1 5 1\",\"dig2 3 6\"]\nclass Solution {\n\t" + headerSignature + "{\n\t\t\n\t}\n}\n"
+    )
+
+    // &lt;
+    const hint1String = "Comparator<String> myComp = new Comparator<String>()"
+    const hint2String = "@Override public int compare(String s1, String s2)\nreturns 1 if s2 comes first"
+    const hint3String = "indexOf, charAt, substring"
+    const hint1 = <p>{hint1String}</p>
+    const hint2 = <p>{hint2String}</p>
+    const hint3 = <p>{hint3String}</p>
+
+    /* --DO NOT MODIFY--------------------------------------------------------------------------------------- */
+    const [hint1Flag, setHint1] = useState(false);
+    const [hint2Flag, setHint2] = useState(false);
+    const [hint3Flag, setHint3] = useState(false);
+
+    const showHint1 = () => setHint1(!hint1Flag);
+    const showHint2 = () => setHint2(!hint2Flag);
+    const showHint3 = () => setHint3(!hint3Flag);
+
+    var fontSize = 17
+
+    const increaseFontSize = () => {
+        fontSize = fontSize + 1
+        document.getElementsByClassName("main")[0].getElementsByClassName("main1")[0].children[1].style.fontSize = fontSize + "px";
+    }
+
+    const decreaseFontSize = () => {
+        fontSize = fontSize - 1
+        document.getElementsByClassName("main")[0].getElementsByClassName("main1")[0].children[1].style.fontSize = fontSize + "px";       
+    }
+
+    const formattedName = name.toLowerCase().replaceAll(" ", "-")
+    const hyperLink = "https://leetcode.com/problems/" + formattedName
+    const solution =  "https://github.com/ndang6/code-workout-solutions/blob/main/" + formattedName + ".java"
+    const imgPath = "/images/" + formattedName + ".png"
+    
     return (
-        <div class="main">
-            <div class="main1">
-                <p class="prompt">
-                You have an array of logs.  Each log is a space delimited string of words.{"\n"}
-                For each log, the first word in each log is an alphanumeric identifier.  Then, either:{"\n"}
-                Each word after the identifier will consist only of lowercase letters, or;{"\n"}
-                Each word after the identifier will consist only of digits.{"\n"}
-                We will call these two varieties of logs letter-logs and digit-logs. {"\n"} 
-                It is guaranteed that each log has at least one word after its identifier.{"\n"}
-                Reorder the logs so that all of the letter-logs come before any digit-log. {"\n"} 
-                The letter-logs are ordered lexicographically ignoring identifier, with the identifier used in case of ties. {"\n"} 
-                The digit-logs should be put in their original order.{"\n"}
-                Return the final order of the logs.
-                </p>
+        <div>
+            <h1 class="title">{name}</h1>
+            <h5 class="tag">{hashTags}</h5>
 
-                <div class="example">
-                    <p>Example 1{"\n"}
-                    Input: logs = ["dig1 8 1 5 1","let1 art can","dig2 3 6","let2 own kit dig","let3 art zero"]{"\n"}
-                    Output: ["let1 art can","let3 art zero","let2 own kit dig","dig1 8 1 5 1","dig2 3 6"]
-                    </p>
-
+            <div class = "main">
+                <div class="main1">   
+                    <p class="prompt">
+                        {prompt}
+                    </p>   
+                    <CodeMirror value={code} 
+                        options = {{
+                            mode: "text/x-java",
+                            theme: "abcdef",
+                            lineWrapping: true,
+                            smartIndent: true,
+                            lineNumbers: true,                            
+                            gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+                            autoCloseTags: true,
+                            keyMap: "sublime",
+                            matchBrackets: true,
+                            autoCloseBrackets: true,
+                            extraKeys: {
+                                "Ctrl-/": "toggleComment"
+                            }
+                        }}
+                        onBeforeChange={(editor, data, value) => {
+                            setCode(value);
+                        }}
+                        onChange={(editor, data, value) => {
+                            setCode(value);
+                        }}
+                    />   
+                    
+                    <div class="buttons">
+                        <Timer />
+                        <div>
+                            <button onClick={increaseFontSize}>+</button>  
+                            <button onClick={decreaseFontSize}>-</button>
+                        </div>                                                                
+                    </div>
+                    
+                    <div class="foot">                      
+                        <button onClick={() => { navigator.clipboard.writeText(code) }}>Copy Your Code</button>
+                        <a class="leetcode" target="_blank" rel="noopener noreferrer" href={hyperLink}>Test it on leetcode.com</a> 
+                        <a class="leetcode" target="_blank" rel="noopener noreferrer" href={solution}>Suggested Solution</a> 
+                    </div>
+                
                 </div>
-                <CodeArea template={template}/>
-                <Timer />
-                <a href="https://leetcode.com/problems/two-sum/">Try it on leetcode.com</a> 
-            </div>
-            <div class="main2">
-                <img src="/images/hashmap.jpg" alt="hash map" width="500" height="600"/>
-            </div>
-            
+                <div class="main2">
+                    <img src={imgPath} alt="hash map" width="500" height="600"/>
+                
+                    <div class="hint1">
+                        <button onClick={showHint1}>Hint 1</button>
+                        { hint1Flag ? hint1 : null}
+                    </div>
+                    <div class="hint2">
+                        <button onClick={showHint2}>Hint 2</button>
+                        { hint2Flag ? hint2 : null}
+                    </div>
+                    <div class="hint3">
+                        <button onClick={showHint3}>Hint 3</button>
+                        { hint3Flag ? hint3 : null}
+                    </div>                   
+                </div>
+            </div>          
         </div>
     )
+
+
 }
 
 export default ReorderDataInLogFiles

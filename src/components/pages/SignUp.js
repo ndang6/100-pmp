@@ -29,7 +29,7 @@ const SignUp = ({ history }) => {
 			await firebase
 				.auth()
 				.signInWithEmailAndPassword(email.value, password.value);
-			history.push("/challenge");
+			history.push("/");
 		}
 		catch(error){
 			alert(error);

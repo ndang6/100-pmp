@@ -57,9 +57,10 @@ function TwoSum() {
         document.getElementsByClassName("main")[0].getElementsByClassName("main1")[0].children[1].style.fontSize = fontSize + "px";       
     }
 
-    const hyperLink = "https://leetcode.com/problems/" + name.toLowerCase().replace(" ", "-")
-    const solution = hyperLink + "/solution"
-    const imgPath = "/images/" + name.toLowerCase().replaceAll(" ", "-") + ".png"
+    const formattedName = name.toLowerCase().replaceAll(" ", "-")
+    const hyperLink = "https://leetcode.com/problems/" + formattedName
+    const solution =  "https://github.com/ndang6/code-workout-solutions/blob/main/" + formattedName + ".java"
+    const imgPath = "/images/" + formattedName + ".png"
     
     return (
         <div>
@@ -108,7 +109,7 @@ function TwoSum() {
                     <div class="foot">                      
                         <button onClick={() => { navigator.clipboard.writeText(code) }}>Copy Your Code</button>
                         <a class="leetcode" target="_blank" rel="noopener noreferrer" href={hyperLink}>Test it on leetcode.com</a> 
-                        <a class="leetcode" target="_blank" rel="noopener noreferrer" href={solution}>Solution</a> 
+                        <a class="leetcode" target="_blank" rel="noopener noreferrer" href={solution}>Suggested Solution</a> 
                     </div>
                 
                 </div>

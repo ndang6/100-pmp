@@ -39,8 +39,34 @@
 }
 
 .navbar-logo > i {
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-top: 10px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.navbar-logo > h4 {
+  margin-bottom: 22px;
+  border-bottom: 5px solid white;
+}
+
+.dropdown{
+  position: absolute;
+  top: 58px;
+  width: fit-content;
+  transform: translateX(-20%);
+  background-color: #242526;
+  border: 1px solid #474a4d;
+  border-radius: 8px;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.dropdown > button {
+  font-size: 20px;
+  background-color: green;
+  border-style: none;
+  padding: 10px;
+  color: white;
 }
   
 .fa-typo3 {
@@ -70,6 +96,7 @@
   text-decoration: none;
   padding: 0.5rem 1rem;
   height: 100%;
+  width: max-content;
 }
 
 .nav-links:hover {
@@ -79,6 +106,14 @@
 
 .fa-bars {
   color: #fff;
+}
+
+.fa-crown{
+  margin-bottom: 5px;;
+}
+
+.fa-caret-down{
+  margin-left: 8px;
 }
 
 .nav-links-mobile {

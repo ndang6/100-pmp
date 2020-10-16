@@ -3,52 +3,69 @@ import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import { AuthContext } from '../components/pages/Auth'
+import firebase from '../firebase'
 
 
 function Navbar() {
-  const [click, setClick] = useState(false);
-  const [button, setButton] = useState(true);
+  const [click, setClick] = useState(false);  
   const { currentUser } = useContext(AuthContext);
-
-  if(currentUser){
-    console.log("Logged In, from Navbar");
-  }
+  const [open, setOpen] = useState(false);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+  const handleDropDown = () => setOpen(!open);
 
-  const showButton = () => {
-    if (window.innerWidth <= 960) {
-      setButton(false);
-    } else {
-      setButton(true);
-    }
-  };
+  // const [button, setButton] = useState(true);
+  // const showButton = () => {
+  //   if (window.innerWidth <= 960) {
+  //     setButton(false);
+  //   } else {
+  //     setButton(true);
+  //   }
+  // };
 
-  useEffect(() => {
-    showButton();
-  }, []);
+  // useEffect(() => {
+  //   showButton();
+  // }, []);
 
-  window.addEventListener('resize', showButton);
-
+  // window.addEventListener('resize', showButton);
+  function DropDownMenu() {
+    return (
+        <div className="dropdown">
+            <button onClick={() => {
+              firebase.auth().signOut();
+              setOpen(false); 
+            }
+            }>
+              Sign Out
+            </button>
+        </div>
+    )
+}
   return (
     <>
       <nav className='navbar'>
         <div className='navbar-container'> 
+
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
             <i className="fas fa-dumbbell"></i>
-            <h3>Code Workout</h3> 
+            <h4 className="thick"> Code Workout </h4> 
             <i className="fas fa-dumbbell"></i>
           </Link>
+
+          {/* hamburger menu */}
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
+
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+
             <li className='nav-item'>
               <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                 Home
               </Link>
             </li>
+
             <li className='nav-item'>
               <Link
                 to='/challenge'
@@ -58,6 +75,7 @@ function Navbar() {
                 Mock Coding Interview
               </Link>
             </li>
+
             <li className='nav-item'>
               <Link
                 to='/questions'
@@ -67,15 +85,26 @@ function Navbar() {
                 Questions
               </Link>
             </li>
-            {currentUser ? <i className="nav-links fas fa-crown"></i> : <li>
-                <Link
-                  to='/signup'
-                  className='nav-links'
-                  onClick={closeMobileMenu}
-                >
-                  Sign Up
+
+            {currentUser ? 
+              <li className='nav-item'>           
+                <Link className='nav-links' onClick={handleDropDown}>
+                  <i className="fas fa-crown"></i><i className="fas fa-caret-down"></i>
                 </Link>
-            </li>}
+                {open && <DropDownMenu />}
+              </li>
+              : 
+              <li className='nav-item'>
+                  <Link
+                    to='/signup'
+                    className='nav-links'
+                    onClick={closeMobileMenu}
+                  >
+                    Sign Up
+                  </Link>
+              </li>
+            }
+
           </ul>
           {/* {button && <Button buttonStyle='btn--outline'>LOG IN</Button>} */}
         </div>
