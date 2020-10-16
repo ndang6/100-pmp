@@ -9,12 +9,12 @@ $primary: #4D6FE5;
 	color: black;
 
 	> header{
-		font-size: 1.3rem;
+		font-size: 1.8rem;
 		font-weight: 700;
 		margin: 0 auto 60px auto;
 		position: relative;
-		height: 32px;
-		width: 250px;
+		height: 40px;
+		width: 300px;
 		overflow: hidden;
 	}
 }
@@ -35,11 +35,11 @@ $primary: #4D6FE5;
 	}
 	
 	&.sign-in{
-		transform: translateY(-30px);
+		transform: translateY(-50px);
 	}
 	
 	&.forgot{
-		transform: translateY(-70px);
+		transform: translateY(-90px);
 	}
 }
 
@@ -63,6 +63,7 @@ $primary: #4D6FE5;
 		
 		&.active {
 			opacity: 1;
+			color: $primary;
 		}
 		
 		&:nth-of-type(2){
@@ -88,7 +89,7 @@ $primary: #4D6FE5;
 	transition: all .4s cubic-bezier(.785,.135,.15,.86);
 
 	&.sign-in{
-		max-height: 123px
+		max-height: 140px
 	}
 	
 	&.sign-up{
@@ -96,7 +97,7 @@ $primary: #4D6FE5;
 	}
 	
 	&.forgot{
-		max-height: 61px
+		max-height: 70px
 	}
 
 	> input{
@@ -128,6 +129,9 @@ $primary: #4D6FE5;
 }
 
 .btn-submit-form{
+	margin-left: auto;	
+	margin-right: auto;
+	width: 20%;
 	border: 0;
 	appearance: none;
 	-webkit-appearance: none;

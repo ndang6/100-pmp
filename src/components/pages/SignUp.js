@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useContext } from 'react'
 import { withRouter, Redirect } from "react-router-dom"
 import './SignUp.scss'
-import firebase from '../../firebase'
+import { projectAuth } from '../../firebase'
 import { AuthContext } from './Auth'
 
 
@@ -10,15 +10,19 @@ const SignUp = ({ history }) => {
 	
 	const handleSignUp = useCallback(async event => {
 		event.preventDefault();
-		const {email, password} = event.target.elements;
-		try{
-			await firebase
-				.auth()
-				.createUserWithEmailAndPassword(email.value, password.value);
-			history.push("/");
+		const {email, password, repeatPassword} = event.target.elements;
+		if(password.value === repeatPassword.value){
+			try{
+				await projectAuth
+					.createUserWithEmailAndPassword(email.value, password.value);
+				history.push("/");
+			}
+			catch(error){
+				alert(error);
+			}
 		}
-		catch(error){
-			alert(error);
+		else{
+			alert("Unmatched Passwords. Try again :)")
 		}
 	}, [history]);
 
@@ -26,8 +30,7 @@ const SignUp = ({ history }) => {
 		event.preventDefault();
 		const {email, password} = event.target.elements;
 		try{
-			await firebase
-				.auth()
+			await projectAuth
 				.signInWithEmailAndPassword(email.value, password.value);
 			history.push("/");
 		}
@@ -62,10 +65,10 @@ const SignUp = ({ history }) => {
 			<div className={'account-form-fields ' + (option === 1 ? 'sign-up' : (option === 2 ? 'sign-in' : 'forgot')) }>
 				<input id='email' name='email' type='email' placeholder='Email' required />
 				<input id='password' name='password' type='password' placeholder='Password' required={option === 1 || option === 2 ? true : false} disabled={option === 3 ? true : false} />
-				{/* <input id='repeat-password' name='repeat-password' type='password' placeholder='Repeat password' required={option === 2 ? true : false} disabled={option === 1 || option === 3 ? true : false} /> */}
+				<input id='repeatPassword' name='repeatPassword' type='password' placeholder='Repeat password' required={option === 1 ? true : false} disabled={option === 2 || option === 3 ? true : false} />
 			</div>
 			<button className='btn-submit-form' type={option !== 3 ? 'submit' : 'reset'}>
-				{ option === 1 ? 'Sign up' : (option === 2 ? 'Log in' : 'Reset password (do nothing for now)') }
+				{ option === 1 ? 'Sign up' : (option === 2 ? 'Log in' : 'Reset password (do nothing)') }
 			</button>
 		</form>
 

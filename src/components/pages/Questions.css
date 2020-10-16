@@ -1,20 +1,14 @@
-
-/* .column-field{
-    display: block;
-} */
-
-.box-field{
+.question-field{
     width: 100%;
     display: flex;
     padding: 10px;
     margin: 10px;
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
     font-size: 20px;
     width: fit-content;
 }
 
-.box-field-incomplete{
-    width: 100%;
+.question-field-incomplete{
     display: flex;
     padding: 10px;
     margin: 10px;
@@ -23,17 +17,35 @@
     width: fit-content;
 }
 
-input[type=checkbox]{
-    margin-right: 50px;   
+.question-field .reviewed{
+    margin-right: 84px;
+}
+
+.question-field .not-reviewed{
+    display: flex;
+}
+
+input {
+    margin-right: 10px;
+    margin-top: 5px;
 }
 
 .marked{
-    display: flex;
     color: black;
     margin-right: 10px;
+    font-size: 15px;
+    padding: 5px;
 }
 
 .name{
     margin-right: 10px;
+}
+
+.fa-biking{
+    color: green;
+}
+
+.underDevelopment{
+    margin-top: 500px;
 }
 

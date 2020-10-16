@@ -3,7 +3,7 @@ import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import { AuthContext } from '../components/pages/Auth'
-import firebase from '../firebase'
+import { projectAuth } from '../firebase'
 
 
 function Navbar() {
@@ -33,7 +33,7 @@ function Navbar() {
     return (
         <div className="dropdown">
             <button onClick={() => {
-              firebase.auth().signOut();
+              projectAuth.signOut();
               setOpen(false); 
             }
             }>

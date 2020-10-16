@@ -14,10 +14,21 @@ import LruCache from './components/questions/LruCache';
 import LongestPalindromicSubstring from './components/questions/LongestPalindromicSubstring';
 import { AuthProvider } from './components/pages/Auth';
 import SignUp from './components/pages/SignUp';
-import Login from './components/pages/Login';
 import PrivateRoute from './components/pages/PrivateRoute';
+import { projectFirestore } from './firebase';
+
+// import { projectFirestore } from './firebase';
+// var namesComplete = ["Two Sum", "Add Two Numbers", "Number Of Islands", "Trapping Rain Water", "Reorder Data in Log Files", "LRU Cache", "Longest Palindromic Substring"]
+
+// projectFirestore.collection('marks').add(
+//   {
+//     title: "Longest Palindromic Substring",
+//     reviewed: false
+//   },
+// )
 
 function App() {
+
   return (
     <AuthProvider>
       <Router>
@@ -25,7 +36,6 @@ function App() {
         <div>
           <Route path='/' exact component={Home}/>
           <Route path='/signup' exact component={SignUp} />
-          <Route path='/login' exact component={Login} />
 
           <PrivateRoute path='/challenge' exact component={Challenge} />
           <Route path='/questions' exact component={Questions} />
