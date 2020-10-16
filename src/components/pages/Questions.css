@@ -31,10 +31,18 @@ input {
 }
 
 .marked{
-    color: black;
     margin-right: 10px;
     font-size: 15px;
     padding: 5px;
+}
+
+.marked-reviewed{
+    margin-right: 10px;
+    font-size: 15px;
+    padding: 5px;
+    background-color: green;
+    color: white;
+    border-style: none;
 }
 
 .name{

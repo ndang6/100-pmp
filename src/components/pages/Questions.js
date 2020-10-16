@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './Questions.css'
 import { Link } from 'react-router-dom';
 import { projectFirestore } from '../../firebase';
+import { findAllByDisplayValue } from '@testing-library/react';
 
 function GetMarks(){
     const [marks, setMarks] = useState([])
@@ -34,6 +35,10 @@ function Questions() {
         projectFirestore.collection('marks').doc(e.target.value).update({reviewed: true})
     }
 
+    const unMark = (e) => {
+        projectFirestore.collection('marks').doc(e.target.value).update({reviewed: false})
+    }
+
     return (
         <div className='column-field'>
             {marks.map(function(mark, index) { 
@@ -41,7 +46,9 @@ function Questions() {
                 return (
                     <div className='question-field' key={mark.id}>
                         {mark.reviewed ? 
-                            <p className="reviewed">Reviewed</p> 
+                            <div className="reviewed">
+                                <button className='marked-reviewed' value={mark.id} onClick={unMark}>Reviewed</button> 
+                            </div> 
                             : 
                             <div className="not-reviewed">
                                 <button className='marked' value={mark.id} onClick={markAsReviewed}>Mark as Reviewed</button> 
