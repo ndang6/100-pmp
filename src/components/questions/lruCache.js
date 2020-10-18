@@ -31,7 +31,7 @@ function LruCache() {
                     
     const [code, setCode] = useState(
         // "class Solution {\n\t" + headerSignature + "{\n\t\t\n\t}\n}\n"
-        "class Solution {\n\t" + headerSignature + "\n}"
+        "class LRUCache {\n\t" + headerSignature + "\n}"
     )
 
     // &lt;

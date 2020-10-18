@@ -44,7 +44,7 @@ export default class Timer extends Component {
             <div>
                 
                 { minutes === 0 && seconds === 0
-                    ? <p class="timer">Time to Submit!</p>
+                    ? <p class="timer">Time to Submit</p>
                     : <p class="timer">Time Remaining: {minutes}:{seconds < 10 ? `0${seconds}` : seconds}</p>
                 }
             </div>

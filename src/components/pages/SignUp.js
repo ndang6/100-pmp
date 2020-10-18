@@ -90,7 +90,7 @@ const SignUp = ({ history }) => {
 					<input id='repeatPassword' name='repeatPassword' type='password' placeholder='Repeat password' required={option === 1 ? true : false} disabled={option === 2 || option === 3 ? true : false} />
 				</div>
 				<button className='btn-submit-form' type='submit'>
-					{ option === 1 ? 'Sign up' : (option === 2 ? 'Log in' : 'Reset password (do nothing)') }
+					{ option === 1 ? 'Sign up' : (option === 2 ? 'Log in' : 'Reset password') }
 				</button>
 			</form>
 

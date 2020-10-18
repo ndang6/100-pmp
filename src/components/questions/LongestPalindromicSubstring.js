@@ -57,7 +57,7 @@ function LongestPalindromicSubstring() {
         document.getElementsByClassName("main")[0].getElementsByClassName("main1")[0].children[1].style.fontSize = fontSize + "px";       
     }
 
-    const formattedName = name.toLowerCase().replace(" ", "-")
+    const formattedName = name.toLowerCase().replaceAll(" ", "-")
     const hyperLink = "https://leetcode.com/problems/" + formattedName
     const solution =  "https://github.com/ndang6/code-workout-solutions/blob/main/" + formattedName + ".java"
     const imgPath = "/images/" + formattedName + ".png"
