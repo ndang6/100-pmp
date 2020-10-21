@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import './Questions.css'
 import { Link } from 'react-router-dom';
 import { projectFirestore } from '../../firebase';
-import { findAllByDisplayValue } from '@testing-library/react';
 
 function GetMarks(){
     const [marks, setMarks] = useState([])
