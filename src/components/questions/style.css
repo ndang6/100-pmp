@@ -69,6 +69,10 @@ img{
     margin: 10px;
 }
 
+iframe{
+    margin-left: 10px;
+}
+
 .hint1 button, .hint2 button, .hint3 button{
     background-color: cadetblue;
     color: white;
