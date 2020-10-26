@@ -15,9 +15,10 @@ import LongestPalindromicSubstring from './components/questions/LongestPalindrom
 import { AuthProvider } from './components/pages/Auth';
 import SignUp from './components/pages/SignUp';
 import PrivateRoute from './components/pages/PrivateRoute';
-import { projectFirestore } from './firebase';
 import DecodeWays from './components/questions/DecodeWays';
 import LongestSubstringWithoutRepeatingCharacters from './components/questions/LongestSubstringWithoutRepeatingCharacters';
+import MaximumSubarray from './components/questions/MaximumSubarray';
+import ConsecutiveNumbersSum from './components/questions/ConsecutiveNumbersSum';
 
 // import { projectFirestore } from './firebase';
 // var namesComplete = ["Two Sum", "Add Two Numbers", "Number Of Islands", "Trapping Rain Water", "Reorder Data in Log Files", "LRU Cache", "Longest Palindromic Substring"]
@@ -50,6 +51,8 @@ function App() {
           <Route path='/questions/longest-palindromic-substring' exact component={LongestPalindromicSubstring} />
           <Route path='/questions/decode-ways' exact component={DecodeWays} />
           <Route path='/questions/longest-substring-without-repeating-characters' exact component={LongestSubstringWithoutRepeatingCharacters} />
+          <Route path='/questions/maximum-subarray' exact component={MaximumSubarray} />
+          <Route path='/questions/consecutive-numbers-sum' exact component={ConsecutiveNumbersSum} />
         </div>
       </Router>
     </AuthProvider>
