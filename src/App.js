@@ -20,6 +20,8 @@ import LongestSubstringWithoutRepeatingCharacters from './components/questions/L
 import MaximumSubarray from './components/questions/MaximumSubarray';
 import ConsecutiveNumbersSum from './components/questions/ConsecutiveNumbersSum';
 import MedianOfTwoSortedArrays from './components/questions/MedianOfTwoSortedArrays';
+import MergeTwoSortedLists from './components/questions/MergeTwoSortedLists';
+import ThreeSum from './components/questions/ThreeSum';
 
 // import { projectFirestore } from './firebase';
 // var namesComplete = ["Two Sum", "Add Two Numbers", "Number Of Islands", "Trapping Rain Water", "Reorder Data in Log Files", "LRU Cache", "Longest Palindromic Substring"]
@@ -55,6 +57,8 @@ function App() {
           <Route path='/questions/maximum-subarray' exact component={MaximumSubarray} />
           <Route path='/questions/consecutive-numbers-sum' exact component={ConsecutiveNumbersSum} />
           <Route path='/questions/median-of-two-sorted-arrays' exact component={MedianOfTwoSortedArrays} />
+          <Route path='/questions/merge-two-sorted-lists' exact component={MergeTwoSortedLists} />
+          <Route path='/questions/3Sum' exact component={ThreeSum} />
         </div>
       </Router>
     </AuthProvider>
