@@ -65,12 +65,12 @@ import Timer from '../Timer'
     
     return (
         <div>
-            <h1 class="title">{name}</h1>
-            <h5 class="tag">{hashTags}</h5>
+            <h1 className="title">{name}</h1>
+            <h5 className="tag">{hashTags}</h5>
 
-            <div class = "main">
-                <div class="main1">   
-                    <p class="prompt">
+            <div className = "main">
+                <div className="main1">   
+                    <p className="prompt">
                         {prompt}
                     </p>   
                     <CodeMirror value={code} 
@@ -97,7 +97,7 @@ import Timer from '../Timer'
                         }}
                     />   
                     
-                    <div class="buttons">
+                    <div className="buttons">
                         <Timer />
                         <div>
                             <button onClick={increaseFontSize}>+</button>  
@@ -105,25 +105,25 @@ import Timer from '../Timer'
                         </div>                                                                
                     </div>
                     
-                    <div class="foot">                      
+                    <div className="foot">                      
                         <button onClick={() => { navigator.clipboard.writeText(code) }}>Copy Your Code</button>
-                        <a class="leetcode" target="_blank" rel="noopener noreferrer" href={hyperLink}>Test it on leetcode.com</a> 
-                        <a class="leetcode" target="_blank" rel="noopener noreferrer" href={solution}>Suggested Solution</a> 
+                        <a className="leetcode" target="_blank" rel="noopener noreferrer" href={hyperLink}>Test it on leetcode.com</a> 
+                        <a className="leetcode" target="_blank" rel="noopener noreferrer" href={solution}>Suggested Solution</a> 
                     </div>
                 
                 </div>
-                <div class="main2">
+                <div className="main2">
                     <img src={imgPath} alt="hash map" width="500" height="600"/>
                 
-                    <div class="hint1">
+                    <div className="hint1">
                         <button onClick={showHint1}>Hint 1</button>
                         { hint1Flag ? hint1 : null}
                     </div>
-                    <div class="hint2">
+                    <div className="hint2">
                         <button onClick={showHint2}>Hint 2</button>
                         { hint2Flag ? hint2 : null}
                     </div>
-                    <div class="hint3">
+                    <div className="hint3">
                         <button onClick={showHint3}>Hint 3</button>
                         { hint3Flag ? hint3 : null}
                     </div>                   

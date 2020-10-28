@@ -18,24 +18,25 @@ import "codemirror/addon/fold/comment-fold";
 import "codemirror/addon/fold/foldgutter.css";
 import Timer from '../Timer'
 
-function MedianOfTwoSortedArrays() {
-    const name = "Median of Two Sorted Arrays"
-    const hashTags = "#Binary Search"
-    const headerSignature = "public double findMedianSortedArrays(int input1[], int input2[])"
+function PartitionLabels() {
+    const name = "Partition Labels"
+    const hashTags = "#string"
+    const headerSignature = "public List<Integer> partitionLabels(String S)"
 
     // \n
     // eslint-disable-next-line no-multi-str
-    const prompt = "Given two sorted arrays nums1 and nums2 of size m and n respectively.\n \
-                    return the median of the two sorted arrays.\n"
+    const prompt = "A string S of lowercase English letters is given.\n \
+                    Partition this string into as many parts as possible... so that each letter appears in at most one part.\n \
+                    Return a list of integers representing the size of these parts."
                     
     const [code, setCode] = useState(
-        "// nums1 = [1,2], nums2 = [3,4], returns 2.5\n// nums1 = [1,2], nums2 = [3,4,5], returns 3\nclass Solution {\n\t" + headerSignature + "{\n\t\t\n\t}\n}\n"
+        "// S = \"ababcbacadefegdehijhklij\" \n//The partition is \"ababcbaca\", \"defegde\", \"hijhklij\"\n// returns [9,7,8]\nclass Solution {\n\t" + headerSignature + "{\n\t\t\n\t}\n}\n"
     )
 
     // &lt;
-    const hint1 = <p>int start = 0{"\n"}int end = input1.length</p>
-    const hint2 = <p>int partitionX = start + (end - start)/2;{"\n"}int partitionY = (m + n + 1)/2 - partitionX;</p>
-    const hint3 = <p>end = partitionX - 1 or start = partitionX + 1</p>
+    const hint1 = <p>int[] last = new int[26];</p>
+    const hint2 = <p>j = Math.max(j, last[S.charAt(i) - 'a']);</p>
+    const hint3 = <p>ans.add(i - anchor + 1);{"\n"}anchor = i + 1;</p>
 
     /* --DO NOT MODIFY--------------------------------------------------------------------------------------- */
     const [hint1Flag, setHint1] = useState(false);
@@ -65,12 +66,12 @@ function MedianOfTwoSortedArrays() {
     
     return (
         <div>
-            <h1 className="title">{name}</h1>
-            <h5 className="tag">{hashTags}</h5>
+            <h1 class="title">{name}</h1>
+            <h5 class="tag">{hashTags}</h5>
 
-            <div className = "main">
-                <div className="main1">   
-                    <p className="prompt">
+            <div class = "main">
+                <div class="main1">   
+                    <p class="prompt">
                         {prompt}
                     </p>   
                     <CodeMirror value={code} 
@@ -97,7 +98,7 @@ function MedianOfTwoSortedArrays() {
                         }}
                     />   
                     
-                    <div className="buttons">
+                    <div class="buttons">
                         <Timer />
                         <div>
                             <button onClick={increaseFontSize}>+</button>  
@@ -105,36 +106,25 @@ function MedianOfTwoSortedArrays() {
                         </div>                                                                
                     </div>
                     
-                    <div className="foot">                      
+                    <div class="foot">                      
                         <button onClick={() => { navigator.clipboard.writeText(code) }}>Copy Your Code</button>
-                        <a className="leetcode" target="_blank" rel="noopener noreferrer" href={hyperLink}>Test it on leetcode.com</a> 
-                        <a className="leetcode" target="_blank" rel="noopener noreferrer" href={solution}>Suggested Solution</a> 
+                        <a class="leetcode" target="_blank" rel="noopener noreferrer" href={hyperLink}>Test it on leetcode.com</a> 
+                        <a class="leetcode" target="_blank" rel="noopener noreferrer" href={solution}>Suggested Solution</a> 
                     </div>
                 
                 </div>
-                <div className="main2">
+                <div class="main2">
                     <img src={imgPath} alt="hash map" width="500" height="600"/>
-
-                    <iframe 
-                        title="video"
-                        width="560" 
-                        height="315" 
-                        src="https://www.youtube.com/embed/LPFhl65R7ww" 
-                        frameBorder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowFullScreen>
-
-                    </iframe>
                 
-                    <div className="hint1">
+                    <div class="hint1">
                         <button onClick={showHint1}>Hint 1</button>
                         { hint1Flag ? hint1 : null}
                     </div>
-                    <div className="hint2">
+                    <div class="hint2">
                         <button onClick={showHint2}>Hint 2</button>
                         { hint2Flag ? hint2 : null}
                     </div>
-                    <div className="hint3">
+                    <div class="hint3">
                         <button onClick={showHint3}>Hint 3</button>
                         { hint3Flag ? hint3 : null}
                     </div>                   
@@ -146,4 +136,4 @@ function MedianOfTwoSortedArrays() {
 
 }
 
-export default MedianOfTwoSortedArrays
+export default PartitionLabels

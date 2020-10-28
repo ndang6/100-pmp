@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import './Questions.css'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { projectFirestore } from '../../firebase';
-
-// 
+import { BeatLoader } from 'react-spinners'
+import DelayLink from '../DelayLink';
 
 function Questions() {
     var namesInComplete = ["Merge k Sorted Lists", "Valid Parentheses", "Product of Array Except Self", "Consecutive Numbers Sum", "Integer to English Words", "Merge Intervals", "Verifying An Alien Dictionary", "Critical Connection in a Network", "Subarray Sum Equals K", "K Closest Points to Origin", "Next Permutation", "Reverse Linked List", "Top K Frequent Words", "Minimum Remove to Make Valid Parentheses", "Container With Most Water", "Decode String", "Maximal Rectangle", "Best Time To Buy and Sell Stock", "Coin Change", "Generate Parenthesis", "Minimum Window Substring", "Maximal Square", "Spiral Matrix", "Add Strings", "Meeting Rooms II", "Text Justification", "Burst Balloon", "Insert Delete GetRandom O(1)", "Reverse Integer", "Partition Labels", "Alien Dictionary", "Permutations", "Rotting Oranges", "Regular Expression Matching", "Strong Password Checker", "Kth Largest Element in an Array", "Search in Rotated Sorted Array"];
 
     const [marks, setMarks] = useState([])
     const [pending, setPending] = useState(true);
+    const [loading, setLoading] = useState(false);
+    const delayTime = 1000;
     
     useEffect(() => {
         projectFirestore.collection('marks').onSnapshot((snapshot) => {
@@ -34,8 +36,15 @@ function Questions() {
         projectFirestore.collection('marks').doc(e.target.value).update({reviewed: false})
     }
 
+    const onDelayStart = () => {
+        setLoading(true)
+    }
+
     return (
+        
         <div className='column-field'>
+            <BeatLoader loading={loading} />
+
             {marks.map(function(mark, index) { 
                 let name = mark.title ? mark.title : "";
                 return (
@@ -50,7 +59,8 @@ function Questions() {
                             </div>
                         }
                         <p className='name'>{mark.title}</p>
-                        <Link to={'/questions/' + name.toLowerCase().replaceAll(" ", "-")}><i className="fas fa-biking"></i></Link>
+                        <DelayLink onDelayStart={onDelayStart} delay={delayTime} to={'/questions/' + name.toLowerCase().replaceAll(" ", "-")}><i className="fas fa-biking"></i></DelayLink>                
+                        
                     </div>
                 )
             })}
@@ -60,7 +70,7 @@ function Questions() {
                     <p className="underDevelopment">*Under Development*</p>
                     {namesInComplete.map(function(name, index){
                         return(
-                            <div className='question-field-incomplete'>                       
+                            <div className='question-field-incomplete' key={index}>                       
                                 <p className='marked'>Mark Reviewed</p>
                                 <input type="checkbox" />                        
                                 <p className='name'>{name}</p>

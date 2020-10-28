@@ -22,6 +22,7 @@ import ConsecutiveNumbersSum from './components/questions/ConsecutiveNumbersSum'
 import MedianOfTwoSortedArrays from './components/questions/MedianOfTwoSortedArrays';
 import MergeTwoSortedLists from './components/questions/MergeTwoSortedLists';
 import ThreeSum from './components/questions/ThreeSum';
+import PartitionLabels from './components/questions/PartitionLabels';
 
 // import { projectFirestore } from './firebase';
 // var namesComplete = ["Two Sum", "Add Two Numbers", "Number Of Islands", "Trapping Rain Water", "Reorder Data in Log Files", "LRU Cache", "Longest Palindromic Substring"]
@@ -59,6 +60,7 @@ function App() {
           <Route path='/questions/median-of-two-sorted-arrays' exact component={MedianOfTwoSortedArrays} />
           <Route path='/questions/merge-two-sorted-lists' exact component={MergeTwoSortedLists} />
           <Route path='/questions/3Sum' exact component={ThreeSum} />
+          <Route path='/questions/partition-labels' exact component={PartitionLabels} />
         </div>
       </Router>
     </AuthProvider>
