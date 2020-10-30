@@ -1,0 +1,19 @@
+.CodeMirror {
+    width: 50%;
+    font-family: Arial, monospace;
+    letter-spacing: 0.8px;
+    height: 800px !important;
+    width: 600px;
+    margin-bottom: 50px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.treeTraversalMain{
+    display: flex;
+}
+
+img {
+    width: fit-content;
+    height: fit-content;
+}

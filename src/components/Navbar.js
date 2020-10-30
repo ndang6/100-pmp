@@ -71,7 +71,7 @@ function Navbar() {
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                Mock Coding Interview
+                Premium Contents
               </Link>
             </li>
 
@@ -105,7 +105,6 @@ function Navbar() {
             }
 
           </ul>
-          {/* {button && <Button buttonStyle='btn--outline'>LOG IN</Button>} */}
         </div>
       </nav>
     </>

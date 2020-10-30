@@ -24,10 +24,6 @@ function Questions() {
         })      
     }, [])
 
-    // if(pending){
-    //     return []
-    // }
-
     const markAsReviewed = (e) => {
         projectFirestore.collection('marks').doc(e.target.value).update({reviewed: true})
     }
@@ -59,8 +55,7 @@ function Questions() {
                             </div>
                         }
                         <p className='name'>{mark.title}</p>
-                        <DelayLink onDelayStart={onDelayStart} delay={delayTime} to={'/questions/' + name.toLowerCase().replaceAll(" ", "-")}><i className="fas fa-biking"></i></DelayLink>                
-                        
+                        <DelayLink onDelayStart={onDelayStart} delay={delayTime} to={'/questions/' + name.toLowerCase().replaceAll(" ", "-")}><i className="fas fa-biking"></i></DelayLink>                                 
                     </div>
                 )
             })}
