@@ -39,6 +39,7 @@ function Questions() {
     return (
         
         <div className='column-field'>
+            <p>Number of available questions: {!pending && marks.length}</p>
             <BeatLoader loading={loading} />
 
             {marks.map(function(mark, index) { 

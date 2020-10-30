@@ -25,6 +25,7 @@ import ThreeSum from './components/questions/ThreeSum';
 import PartitionLabels from './components/questions/PartitionLabels';
 import TreeTraversal from './components/concepts/TreeTraversal';
 import GraphTraversal from './components/concepts/GraphTraversal';
+import ProductOfArrayExceptSelf from './components/questions/ProductOfArrayExceptSelf';
 
 // import { projectFirestore } from './firebase';
 // var namesComplete = ["Two Sum", "Add Two Numbers", "Number Of Islands", "Trapping Rain Water", "Reorder Data in Log Files", "LRU Cache", "Longest Palindromic Substring"]
@@ -63,6 +64,7 @@ function App() {
           <Route path='/questions/merge-two-sorted-lists' exact component={MergeTwoSortedLists} />
           <Route path='/questions/3Sum' exact component={ThreeSum} />
           <Route path='/questions/partition-labels' exact component={PartitionLabels} />
+          <Route path='/questions/product-of-array-except-self' exact component={ProductOfArrayExceptSelf} />
           <Route path='/tree-traversal' exact component={TreeTraversal} />
           <Route path='/graph-traversal' exact component={GraphTraversal} />
         </div>
