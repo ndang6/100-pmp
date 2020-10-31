@@ -1,11 +1,12 @@
-.question-field{
-    width: 100%;
+.column-field .num{
     display: flex;
-    padding: 10px;
-    margin: 10px;
-    /* background-color: antiquewhite; */
-    font-size: 20px;
-    width: fit-content;
+    justify-content: flex-start;
+    margin-left: 20px;
+}
+
+.question-field{
+    display: flex;
+    justify-content: space-between;
 }
 
 .question-field-incomplete{
@@ -55,5 +56,18 @@ input {
 
 .underDevelopment{
     margin-top: 500px;
+}
+
+.question-field .title{
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+    font-size: 20px;
+    width: fit-content;
+}
+
+
+.question-field .rating{
+    margin-right: 10px;
 }
 

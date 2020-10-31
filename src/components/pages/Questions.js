@@ -4,6 +4,7 @@ import './Questions.css'
 import { projectFirestore } from '../../firebase';
 import { BeatLoader } from 'react-spinners'
 import DelayLink from '../DelayLink';
+import StarRating from '../StarRating';
 
 function Questions() {
     var namesInComplete = ["Merge k Sorted Lists", "Valid Parentheses", "Product of Array Except Self", "Consecutive Numbers Sum", "Integer to English Words", "Merge Intervals", "Verifying An Alien Dictionary", "Critical Connection in a Network", "Subarray Sum Equals K", "K Closest Points to Origin", "Next Permutation", "Reverse Linked List", "Top K Frequent Words", "Minimum Remove to Make Valid Parentheses", "Container With Most Water", "Decode String", "Maximal Rectangle", "Best Time To Buy and Sell Stock", "Coin Change", "Generate Parenthesis", "Minimum Window Substring", "Maximal Square", "Spiral Matrix", "Add Strings", "Meeting Rooms II", "Text Justification", "Burst Balloon", "Insert Delete GetRandom O(1)", "Reverse Integer", "Partition Labels", "Alien Dictionary", "Permutations", "Rotting Oranges", "Regular Expression Matching", "Strong Password Checker", "Kth Largest Element in an Array", "Search in Rotated Sorted Array"];
@@ -39,24 +40,35 @@ function Questions() {
     return (
         
         <div className='column-field'>
-            <p>Number of available questions: {!pending && marks.length}</p>
-            <BeatLoader loading={loading} />
+            
+            <div className="num">
+                <p>Number of available questions: {!pending && marks.length}</p>
+                <BeatLoader loading={loading} />
+            </div>
+            
 
             {marks.map(function(mark, index) { 
                 let name = mark.title ? mark.title : "";
                 return (
                     <div className='question-field' key={mark.id}>
-                        {mark.reviewed ? 
-                            <div className="reviewed">
-                                <button className='marked-reviewed' value={mark.id} onClick={unMark}>Reviewed</button> 
-                            </div> 
-                            : 
-                            <div className="not-reviewed">
-                                <button className='marked' value={mark.id} onClick={markAsReviewed}>Mark as Reviewed</button> 
+                            <div className="title">
+                                {mark.reviewed ? 
+                                    <div className="reviewed">
+                                        <button className='marked-reviewed' value={mark.id} onClick={unMark}>Reviewed</button> 
+                                    </div> 
+                                    : 
+                                    <div className="not-reviewed">
+                                        <button className='marked' value={mark.id} onClick={markAsReviewed}>Mark as Reviewed</button> 
+                                    </div>
+                                }
+                                <p className='name'>{mark.title}</p>                  
+                                <DelayLink onDelayStart={onDelayStart} delay={delayTime} to={'/questions/' + name.toLowerCase().replaceAll(" ", "-")}><i className="fas fa-biking"></i></DelayLink>
                             </div>
-                        }
-                        <p className='name'>{mark.title}</p>
-                        <DelayLink onDelayStart={onDelayStart} delay={delayTime} to={'/questions/' + name.toLowerCase().replaceAll(" ", "-")}><i className="fas fa-biking"></i></DelayLink>                                 
+                                                                                                  
+
+                            <div className="rating">
+                                <StarRating></StarRating>
+                            </div>                           
                     </div>
                 )
             })}

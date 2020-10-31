@@ -39,27 +39,27 @@ public class Node{\n\
     }\n\
     \n\
     public static void inOrderTraversal(Node node){\n\
-        if(node != null){\n\
-            inOrderTraversal(node.left);\n\
-            System.out.println(node.name);\n\
-            inOrderTraversal(node.right);\n\
-        }\n\
+        if(node == null)\n\
+            return;\n\n\
+        inOrderTraversal(node.left);\n\
+        System.out.println(node.name);\n\
+        inOrderTraversal(node.right);\n\
     }\n\
     \n\
     public static void preOrderTraversal(Node node){\n\
-        if(node != null){\n\
-            System.out.println(node.name);\n\
-            preOrderTraversal(node.left);\n\
-            preOrderTraversal(node.right);\n\
-        }\n\
+        if(node == null)\n\
+            return;\n\n\
+        System.out.println(node.name);\n\
+        preOrderTraversal(node.left);\n\
+        preOrderTraversal(node.right);\n\
     }\n\
     \n\
     public static void postOrderTraversal(Node node){\n\
-        if(node != null){\n\
-            postOrderTraversal(node.left);\n\
-            postOrderTraversal(node.right);\n\
-            System.out.println(node.name);\n\
-        }\n\
+        if(node == null)\n\
+            return;\n\n\
+        postOrderTraversal(node.left);\n\
+        postOrderTraversal(node.right);\n\
+        System.out.println(node.name);\n\
     }\n}\
         "      
     )
@@ -91,7 +91,7 @@ public class Test{\n\
         Node.postOrderTraversal(a);\n}\
         "
     )
-    const hint1 = <p>left-self-right{"\n"}d g b e a f c</p>
+    const hint1 = <p>left-self-right{"\n"}d g b e a f c{"\n"}d &lt; g &lt; b &lt; e &lt; a &lt; f &lt; c</p>
     const hint2 = <p>self-left-right{"\n"}a b d g e c f</p>
     const hint3 = <p>left-right-self{"\n"}g d e b f c a</p>
 
@@ -157,7 +157,7 @@ public class Test{\n\
         <div>
             <img src="/images/treeTraversal.png" alt="hash map"/>
             <div class="hint1">
-                        <button onClick={showHint1}>In-order traversal</button>
+                        <button onClick={showHint1}>In-order traversal (ascending traversal)</button>
                         { hint1Flag ? hint1 : null}
                     </div>
                     <div class="hint2">

@@ -57,7 +57,7 @@ public class Graph {\n\
     public void BFS(int start){\n\
         boolean visited[] = new boolean[this.numVertices];\n\
         Queue<Integer> queue = new LinkedList<>();\n\
-        queue.push(start);\n\n\
+        queue.add(start);\n\n\
         while(!queue.isEmpty()){\n\
             int current = queue.poll();\n\
             if(!visited[current]){\n\
