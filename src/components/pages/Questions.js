@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import './Questions.css'
-// import { Link } from 'react-router-dom';
 import { projectFirestore } from '../../firebase';
 import { BeatLoader } from 'react-spinners'
 import DelayLink from '../DelayLink';
 import StarRating from '../StarRating';
+import ProgessBar from '../ProgessBar';
 
 function Questions() {
-    var namesInComplete = ["Merge k Sorted Lists", "Valid Parentheses", "Product of Array Except Self", "Consecutive Numbers Sum", "Integer to English Words", "Merge Intervals", "Verifying An Alien Dictionary", "Critical Connection in a Network", "Subarray Sum Equals K", "K Closest Points to Origin", "Next Permutation", "Reverse Linked List", "Top K Frequent Words", "Minimum Remove to Make Valid Parentheses", "Container With Most Water", "Decode String", "Maximal Rectangle", "Best Time To Buy and Sell Stock", "Coin Change", "Generate Parenthesis", "Minimum Window Substring", "Maximal Square", "Spiral Matrix", "Add Strings", "Meeting Rooms II", "Text Justification", "Burst Balloon", "Insert Delete GetRandom O(1)", "Reverse Integer", "Partition Labels", "Alien Dictionary", "Permutations", "Rotting Oranges", "Regular Expression Matching", "Strong Password Checker", "Kth Largest Element in an Array", "Search in Rotated Sorted Array"];
+    var namesInComplete = ["Integer to English Words", "Merge Intervals", "Verifying An Alien Dictionary", "Critical Connection in a Network", "Subarray Sum Equals K", "K Closest Points to Origin", "Next Permutation", "Reverse Linked List", "Top K Frequent Words", "Minimum Remove to Make Valid Parentheses", "Container With Most Water", "Decode String", "Maximal Rectangle", "Best Time To Buy and Sell Stock", "Coin Change", "Generate Parenthesis", "Minimum Window Substring", "Maximal Square", "Spiral Matrix", "Add Strings", "Meeting Rooms II", "Text Justification", "Burst Balloon", "Insert Delete GetRandom O(1)", "Reverse Integer", "Partition Labels", "Alien Dictionary", "Permutations", "Rotting Oranges", "Regular Expression Matching", "Strong Password Checker", "Kth Largest Element in an Array", "Search in Rotated Sorted Array"];
 
     const [marks, setMarks] = useState([])
     const [pending, setPending] = useState(true);
@@ -42,8 +42,12 @@ function Questions() {
         <div className='column-field'>
             
             <div className="num">
-                <p>Number of available questions: {!pending && marks.length}</p>
+                <ProgessBar done={marks.length}></ProgessBar>
                 <BeatLoader loading={loading} />
+
+                <div className="difficulty">
+                    <p>Level of Difficulty</p>
+                </div>             
             </div>
             
 
@@ -67,7 +71,7 @@ function Questions() {
                                                                                                   
 
                             <div className="rating">
-                                <StarRating></StarRating>
+                                <StarRating id={mark.id}></StarRating>
                             </div>                           
                     </div>
                 )

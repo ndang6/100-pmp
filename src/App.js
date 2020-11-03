@@ -28,6 +28,7 @@ import GraphTraversal from './components/concepts/GraphTraversal';
 import ProductOfArrayExceptSelf from './components/questions/ProductOfArrayExceptSelf';
 import ValidParentheses from './components/questions/ValidParentheses';
 import MergeIntervals from './components/questions/MergeIntervals';
+import BestTimeToBuyAndSellStocks from './components/questions/BestTimeToBuyAndSellStocks';
 
 // import { projectFirestore } from './firebase';
 // var namesComplete = ["Two Sum", "Add Two Numbers", "Number Of Islands", "Trapping Rain Water", "Reorder Data in Log Files", "LRU Cache", "Longest Palindromic Substring"]
@@ -69,6 +70,7 @@ function App() {
           <Route path='/questions/product-of-array-except-self' exact component={ProductOfArrayExceptSelf} />
           <Route path='/questions/valid-parentheses' exact component={ValidParentheses} />
           <Route path='/questions/merge-intervals' exact component={MergeIntervals} />
+          <Route path='/questions/best-time-to-buy-and-sell-stocks' exact component={BestTimeToBuyAndSellStocks} />
           <Route path='/tree-traversal' exact component={TreeTraversal} />
           <Route path='/graph-traversal' exact component={GraphTraversal} />
         </div>

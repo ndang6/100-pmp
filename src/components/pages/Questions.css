@@ -1,7 +1,13 @@
 .column-field .num{
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     margin-left: 20px;
+}
+
+.column-field .difficulty{
+    margin-right: 70px;
+    margin-top: 10px;
+    font-size: 20px;
 }
 
 .question-field{
@@ -69,5 +75,7 @@ input {
 
 .question-field .rating{
     margin-right: 10px;
+    margin-top: 10px;
+    display: flex;
 }
 

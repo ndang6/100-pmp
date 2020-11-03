@@ -10,3 +10,10 @@ input[type="radio"]{
 .starRating-main{
     display: flex;
 }
+
+.no-rating{
+    margin-right: 5px;
+    margin-top: 5px;
+    color: grey;
+    font-size: 12px;
+}

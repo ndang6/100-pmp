@@ -87,7 +87,7 @@ function Navbar() {
 
             {currentUser ? 
               <li className='nav-item'>           
-                <Link className='nav-links' onClick={handleDropDown}>
+                <Link to="#" className='nav-links' onClick={handleDropDown}>
                   <i className="fas fa-crown"></i><i className="fas fa-caret-down"></i>
                 </Link>
                 {open && <DropDownMenu />}
