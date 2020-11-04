@@ -30,6 +30,7 @@ import ValidParentheses from './components/questions/ValidParentheses';
 import MergeIntervals from './components/questions/MergeIntervals';
 import BestTimeToBuyAndSellStocks from './components/questions/BestTimeToBuyAndSellStocks';
 import MergeKSortedLists from './components/questions/MergeKSortedLists';
+import VerifyingAnAlienDictionary from './components/questions/VerifyingAnAlienDictionary';
 
 // import { projectFirestore } from './firebase';
 // var namesComplete = ["Two Sum", "Add Two Numbers", "Number Of Islands", "Trapping Rain Water", "Reorder Data in Log Files", "LRU Cache", "Longest Palindromic Substring"]
@@ -73,6 +74,7 @@ function App() {
           <Route path='/questions/merge-intervals' exact component={MergeIntervals} />
           <Route path='/questions/best-time-to-buy-and-sell-stocks' exact component={BestTimeToBuyAndSellStocks} />
           <Route path='/questions/merge-k-sorted-lists' exact component={MergeKSortedLists} />
+          <Route path='/questions/verifying-an-alien-dictionary' exact component={VerifyingAnAlienDictionary} />
           <Route path='/tree-traversal' exact component={TreeTraversal} />
           <Route path='/graph-traversal' exact component={GraphTraversal} />
         </div>
