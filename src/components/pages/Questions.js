@@ -41,14 +41,16 @@ function Questions() {
         
         <div className='column-field'>
             
-            <div className="num">
-                <ProgessBar done={marks.length}></ProgessBar>
-                <BeatLoader loading={loading} />
+            {!pending &&
+                <div className="num">
+                    <ProgessBar done={marks.length}></ProgessBar>
+                    <BeatLoader loading={loading} />
 
-                <div className="difficulty">
-                    <p>Level of Difficulty</p>
-                </div>             
-            </div>
+                    <div className="difficulty">
+                        <p>Level of Difficulty</p>
+                    </div>             
+                </div>
+            }
             
 
             {marks.map(function(mark, index) { 
