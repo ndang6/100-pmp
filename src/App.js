@@ -34,6 +34,7 @@ import VerifyingAnAlienDictionary from './components/questions/VerifyingAnAlienD
 import IntegerToEnglishWords from './components/questions/IntegerToEnglishWords';
 import ReverseLinkedList from './components/questions/ReverseLinkedList';
 import DecodeString from './components/questions/DecodeString';
+import NextPermutation from './components/questions/NextPermutation';
 
 // import { projectFirestore } from './firebase';
 // var namesComplete = ["Two Sum", "Add Two Numbers", "Number Of Islands", "Trapping Rain Water", "Reorder Data in Log Files", "LRU Cache", "Longest Palindromic Substring"]
@@ -81,6 +82,7 @@ function App() {
           <Route path='/questions/integer-to-english-words' exact component={IntegerToEnglishWords} />
           <Route path='/questions/reverse-linked-list' exact component={ReverseLinkedList} />
           <Route path='/questions/decode-string' exact component={DecodeString} />
+          <Route path='/questions/next-permutation' exact component={NextPermutation} />
           <Route path='/tree-traversal' exact component={TreeTraversal} />
           <Route path='/graph-traversal' exact component={GraphTraversal} />
         </div>
