@@ -32,6 +32,8 @@ import BestTimeToBuyAndSellStocks from './components/questions/BestTimeToBuyAndS
 import MergeKSortedLists from './components/questions/MergeKSortedLists';
 import VerifyingAnAlienDictionary from './components/questions/VerifyingAnAlienDictionary';
 import IntegerToEnglishWords from './components/questions/IntegerToEnglishWords';
+import ReverseLinkedList from './components/questions/ReverseLinkedList';
+import DecodeString from './components/questions/DecodeString';
 
 // import { projectFirestore } from './firebase';
 // var namesComplete = ["Two Sum", "Add Two Numbers", "Number Of Islands", "Trapping Rain Water", "Reorder Data in Log Files", "LRU Cache", "Longest Palindromic Substring"]
@@ -77,6 +79,8 @@ function App() {
           <Route path='/questions/merge-k-sorted-lists' exact component={MergeKSortedLists} />
           <Route path='/questions/verifying-an-alien-dictionary' exact component={VerifyingAnAlienDictionary} />
           <Route path='/questions/integer-to-english-words' exact component={IntegerToEnglishWords} />
+          <Route path='/questions/reverse-linked-list' exact component={ReverseLinkedList} />
+          <Route path='/questions/decode-string' exact component={DecodeString} />
           <Route path='/tree-traversal' exact component={TreeTraversal} />
           <Route path='/graph-traversal' exact component={GraphTraversal} />
         </div>

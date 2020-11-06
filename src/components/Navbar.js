@@ -14,20 +14,6 @@ function Navbar() {
   const closeMobileMenu = () => setClick(false);
   const handleDropDown = () => setOpen(!open);
 
-  // const [button, setButton] = useState(true);
-  // const showButton = () => {
-  //   if (window.innerWidth <= 960) {
-  //     setButton(false);
-  //   } else {
-  //     setButton(true);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   showButton();
-  // }, []);
-
-  // window.addEventListener('resize', showButton);
   function DropDownMenu() {
     return (
         <div className="dropdown">
@@ -48,7 +34,7 @@ function Navbar() {
 
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
             <i className="fas fa-dumbbell"></i>
-            <h4 className="thick"> Code Workout </h4> 
+            <h4 className="thick"> CODE WORKOUT </h4> 
             <i className="fas fa-dumbbell"></i>
           </Link>
 

@@ -69,6 +69,7 @@ function Questions() {
                                 }
                                 <p className='name'>{mark.title}</p>                  
                                 <DelayLink onDelayStart={onDelayStart} delay={delayTime} to={'/questions/' + name.toLowerCase().replaceAll(" ", "-")}><i className="fas fa-biking"></i></DelayLink>
+                                
                             </div>
                                                                                                   
 

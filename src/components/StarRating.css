@@ -17,3 +17,38 @@ input[type="radio"]{
     color: grey;
     font-size: 12px;
 }
+
+.star{
+    font-size: 24px;
+}
+
+@media screen and (max-width: 970px) {
+    .no-rating{
+        display: none;
+    }
+
+    .star{
+        margin-top: 10px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .no-rating{
+        display: none;
+    }
+
+    .star{
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .no-rating{
+        display: none;
+    }
+
+    .star{
+        display: none;
+    }
+}

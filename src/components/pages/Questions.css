@@ -5,7 +5,7 @@
 }
 
 .column-field .difficulty{
-    margin-right: 70px;
+    margin-right: 50px;
     margin-top: 10px;
     font-size: 20px;
 }
@@ -77,5 +77,73 @@ input {
     margin-right: 10px;
     margin-top: 10px;
     display: flex;
+}
+
+@media screen and (max-width: 970px) {
+    .marked{
+        margin-right: 10px;
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .marked-reviewed{
+        margin-right: 10px;
+        font-size: 12px;
+        padding: 5px;
+        background-color: green;
+        color: white;
+        border-style: none;
+    }
+
+    .question-field .title{
+        display: flex;
+        padding: 10px;
+        margin: 10px;
+        font-size: 18px;
+        width: fit-content;
+    }
+
+    .column-field .difficulty{
+        margin-right: 20px;
+        margin-top: 15px;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .marked{
+        margin-right: 10px;
+        font-size: 8px;
+        padding: 5px;
+    }
+
+    .marked-reviewed{
+        margin-right: 10px;
+        font-size: 8px;
+        padding: 5px;
+        background-color: green;
+        color: white;
+        border-style: none;
+    }
+
+    .question-field .title{
+        display: flex;
+        justify-content: flex-start;
+        padding: 10px;
+        margin: 10px;
+        font-size: 18px;
+    }
+
+    .column-field .difficulty{
+        display: none;
+    }
+
+    .marked{
+        display: none;
+    }
+
+    .marked-reviewed{
+        display: none;
+    }
 }
 
