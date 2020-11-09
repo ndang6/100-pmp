@@ -32,9 +32,11 @@
     display: flex;
 }
 
-input {
-    margin-right: 10px;
+.column-field .searchBox {
+    margin-left: 20px;
     margin-top: 5px;
+    font-size : 15px;
+    padding: 3px;
 }
 
 .marked{

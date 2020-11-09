@@ -6,12 +6,14 @@ import DelayLink from '../DelayLink';
 import StarRating from '../StarRating';
 import ProgessBar from '../ProgessBar';
 
+
 function Questions() {
     var namesInComplete = ["Integer to English Words", "Merge Intervals", "Verifying An Alien Dictionary", "Critical Connection in a Network", "Subarray Sum Equals K", "K Closest Points to Origin", "Next Permutation", "Reverse Linked List", "Top K Frequent Words", "Minimum Remove to Make Valid Parentheses", "Container With Most Water", "Decode String", "Maximal Rectangle", "Best Time To Buy and Sell Stock", "Coin Change", "Generate Parenthesis", "Minimum Window Substring", "Maximal Square", "Spiral Matrix", "Add Strings", "Meeting Rooms II", "Text Justification", "Burst Balloon", "Insert Delete GetRandom O(1)", "Reverse Integer", "Partition Labels", "Alien Dictionary", "Permutations", "Rotting Oranges", "Regular Expression Matching", "Strong Password Checker", "Kth Largest Element in an Array", "Search in Rotated Sorted Array"];
 
     const [marks, setMarks] = useState([])
     const [pending, setPending] = useState(true);
     const [loading, setLoading] = useState(false);
+    const [search, setSearch] = useState("");
     const delayTime = 1000;
     
     useEffect(() => {
@@ -37,10 +39,17 @@ function Questions() {
         setLoading(true)
     }
 
-    return (
-        
+    const updateSearch = (e) => {
+        console.log(e.target.value)
+        setSearch(e.target.value.substring(0, 20))
+    }
+
+    let filteredQuestions = marks.filter((question) => {
+        return question.title.toString().toLowerCase().indexOf(search) !== -1
+    });
+
+    return (   
         <div className='column-field'>
-            
             {!pending &&
                 <div className="num">
                     <ProgessBar done={marks.length}></ProgessBar>
@@ -52,8 +61,11 @@ function Questions() {
                 </div>
             }
             
-
-            {marks.map(function(mark, index) { 
+            {!pending &&
+                <input className="searchBox" type="text" placeholder="Search" value={search} onChange={updateSearch} />
+            }
+            
+            {filteredQuestions.map( (mark) => { 
                 let name = mark.title ? mark.title : "";
                 return (
                     <div className='question-field' key={mark.id}>
@@ -87,7 +99,6 @@ function Questions() {
                         return(
                             <div className='question-field-incomplete' key={index}>                       
                                 <p className='marked'>Mark Reviewed</p>
-                                <input type="checkbox" />                        
                                 <p className='name'>{name}</p>
                             </div> 
                         )

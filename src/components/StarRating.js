@@ -28,7 +28,7 @@ function StarRating(props) {
     return (
         
         <div className="starRating-main">
-            {(rating == null || rating == 0) && <p className="no-rating">No rating yet</p>}
+            {(rating == null || rating === 0) && <p className="no-rating">No rating yet</p>}
             {[...Array(10)].map((star, i) => {
                 const ratingValue = i + 1;
 
