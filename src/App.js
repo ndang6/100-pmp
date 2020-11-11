@@ -36,16 +36,8 @@ import ReverseLinkedList from './components/questions/ReverseLinkedList';
 import DecodeString from './components/questions/DecodeString';
 import NextPermutation from './components/questions/NextPermutation';
 import WordBreak from './components/questions/WordBreak';
-
-// import { projectFirestore } from './firebase';
-// var namesComplete = ["Two Sum", "Add Two Numbers", "Number Of Islands", "Trapping Rain Water", "Reorder Data in Log Files", "LRU Cache", "Longest Palindromic Substring"]
-
-// projectFirestore.collection('marks').add(
-//   {
-//     title: "Longest Palindromic Substring",
-//     reviewed: false
-//   },
-// )
+import TextJustification from './components/questions/TextJustification';
+import SubarraySumEqualsK from './components/questions/SubarraySumEqualsK';
 
 function App() {
 
@@ -85,6 +77,8 @@ function App() {
           <Route path='/questions/decode-string' exact component={DecodeString} />
           <Route path='/questions/next-permutation' exact component={NextPermutation} />
           <Route path='/questions/word-break' exact component={WordBreak} />
+          <Route path='/questions/text-justification' exact component={TextJustification} />
+          <Route path='/questions/subarray-sum-equals-k' exact component={SubarraySumEqualsK} />
           <Route path='/tree-traversal' exact component={TreeTraversal} />
           <Route path='/graph-traversal' exact component={GraphTraversal} />
         </div>
