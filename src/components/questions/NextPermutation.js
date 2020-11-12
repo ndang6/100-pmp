@@ -44,12 +44,12 @@ function NextPermutation() {
 
     /* --DO NOT MODIFY--------------------------------------------------------------------------------------- */
     const [hint1Flag, setHint1] = useState(false);
-    const [hint2Flag, setHint2] = useState(false);
-    const [hint3Flag, setHint3] = useState(false);
+    // const [hint2Flag, setHint2] = useState(false);
+    // const [hint3Flag, setHint3] = useState(false);
 
     const showHint1 = () => setHint1(!hint1Flag);
-    const showHint2 = () => setHint2(!hint2Flag);
-    const showHint3 = () => setHint3(!hint3Flag);
+    // const showHint2 = () => setHint2(!hint2Flag);
+    // const showHint3 = () => setHint3(!hint3Flag);
 
     var fontSize = 17
 

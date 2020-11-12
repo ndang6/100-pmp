@@ -10,6 +10,16 @@
     font-size: 20px;
 }
 
+.column-field .pickQuestion{
+    margin-left: 10px;
+    padding: 4px;
+}
+
+.column-field .pickQuestion .pickQuestionLink {
+    text-decoration: none;
+    color: black;
+}
+
 .question-field{
     display: flex;
     justify-content: space-between;

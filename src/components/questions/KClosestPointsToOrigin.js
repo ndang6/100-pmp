@@ -17,24 +17,23 @@ import "codemirror/addon/fold/brace-fold";
 import "codemirror/addon/fold/comment-fold";
 import "codemirror/addon/fold/foldgutter.css";
 import Timer from '../Timer'
+function KClosestPointsToOrigin() {
+    const name = "K Closest Points to Origin"
+    const hashTags = "#quick-select"
+    const headerSignature = "public int[][] kClosest(int[][] points, int K)"
 
-function TwoSum() {
-    const name = "Two Sum"   
-    const hashTags = "#array #hash-map"
-    const headerSignature = "public int[] twoSum(int[] nums, int target)"
-
+    // \n
     // eslint-disable-next-line no-multi-str
-    const prompt = "Given nums and  target, return indices of the two numbers such that they add up to target.\n \
-                    This problem has exactly one solution.\n \
-                    You cannot use the same element twice. You can return the answer in any order."
-
+    const prompt = "We have a list of points on the plane.  Find the K closest points to the origin (0, 0)."
+                    
     const [code, setCode] = useState(
-        "// nums = [2,7,11,15], target = 9\n// returns [0,1]\nclass Solution {\n\t" + headerSignature + "{\n\t\t\n\t}\n}\n"
-    )                
+        "// points = [ [3,3],[5,-3],[-2,5],[1,1],[3,4] ], K = 3\n// returns [ [1,1],[3,3],[3,4] ]\nclass Solution {\n\t" + headerSignature + "{\n\t\t\n\t}\n}\n"
+    )
 
-    const hint1 = <p> Map&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;()</p>
-    const hint2 = <p>map.get, map.put, map.containsKey</p>
-    const hint3 = <p>throw new IllegalArgumentException("No solutions")</p>    
+    // &lt;
+    const hint1 = <p>private int helper(int[][] A, int m, int n) ...</p>
+    const hint2 = <p>private int compare(int[] p1, int[] p2) ...</p>
+    const hint3 = <p>int mid = helper(points, m, n); ... return Arrays.copyOfRange(points, 0, K);</p>
 
     /* --DO NOT MODIFY--------------------------------------------------------------------------------------- */
     const [hint1Flag, setHint1] = useState(false);
@@ -68,13 +67,11 @@ function TwoSum() {
             <h5 className="tag">{hashTags}</h5>
 
             <div className = "main">
-                <div className="main1">              
+                <div className="main1">   
                     <p className="prompt">
                         {prompt}
-                    </p> 
-                    
-                    <CodeMirror 
-                        value={code} 
+                    </p>   
+                    <CodeMirror value={code} 
                         options = {{
                             mode: "text/x-java",
                             theme: "abcdef",
@@ -105,17 +102,19 @@ function TwoSum() {
                             <button onClick={decreaseFontSize}>-</button>
                         </div>                                                                
                     </div>
-                      
+                    
                     <div className="foot">                      
                         <button onClick={() => { navigator.clipboard.writeText(code) }}>Copy Your Code</button>
                         <a className="leetcode" target="_blank" rel="noopener noreferrer" href={hyperLink}>Test it on leetcode.com</a> 
                         <a className="leetcode" target="_blank" rel="noopener noreferrer" href={solution}>Suggested Solution</a> 
                     </div>
+                    
                 
                 </div>
                 <div className="main2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Quicksort-example.gif" alt="quick-sort"/>
                     <img src={imgPath} alt="hash map" width="500" height="600"/>
-                
+
                     <div className="hint1">
                         <button onClick={showHint1}>Hint 1</button>
                         { hint1Flag ? hint1 : null}
@@ -132,6 +131,8 @@ function TwoSum() {
             </div>          
         </div>
     )
+
+
 }
 
-export default TwoSum
+export default KClosestPointsToOrigin

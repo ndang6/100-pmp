@@ -62,7 +62,10 @@ function Questions() {
             }
             
             {!pending &&
-                <input className="searchBox" type="text" placeholder="Search" value={search} onChange={updateSearch} />
+                <div>
+                    <input className="searchBox" type="text" placeholder="Search" value={search} onChange={updateSearch} />
+                    <button className="pickQuestion"><DelayLink className="pickQuestionLink" onDelayStart={onDelayStart} delay={delayTime} to={'/questions/' + marks[Math.round(Math.random() * marks.length)].title.toLowerCase().replaceAll(" ", "-")}>Pick A Question</DelayLink></button>
+                </div>
             }
             
             {filteredQuestions.map( (mark) => { 
