@@ -20,7 +20,7 @@ import Timer from '../Timer'
 
 function SubarraySumEqualsK() {
     const name = "Subarray Sum Equals K"
-    const hashTags = "#hash-map"
+    const hashTags = "#brute-force"
     const headerSignature = "public int subarraySum(int[] nums, int k)"
 
     // \n
@@ -28,13 +28,13 @@ function SubarraySumEqualsK() {
     const prompt = "Given an array of integers nums and an integer k, return the total number of continuous subarrays whose sum equals to k.\n"
                     
     const [code, setCode] = useState(
-        "// nums = [1,1,1], k = 2\n// returns 2\nclass Solution {\n\t" + headerSignature + "{\n\t\t\n\t}\n}\n"
+        "// nums = [1,1,2,2,3,1,-2], k = 4\n// returns 4\nclass Solution {\n\t" + headerSignature + "{\n\t\t\n\t}\n}\n"
     )
 
     // &lt;
-    const hint1 = <p>Hint 1</p>
-    const hint2 = <p>Hint 2</p>
-    const hint3 = <p>Hint 3</p>
+    const hint1 = <p>2 for loops</p>
+    const hint2 = <p>sum += nums[end];</p>
+    const hint3 = <p>if (sum == k) count++;</p>
 
     /* --DO NOT MODIFY--------------------------------------------------------------------------------------- */
     const [hint1Flag, setHint1] = useState(false);
@@ -64,7 +64,6 @@ function SubarraySumEqualsK() {
     
     return (
         <div>
-            <p>This question is hard. I'm still working on it...</p>
             <h1 className="title">{name}</h1>
             <h5 className="tag">{hashTags}</h5>
 
