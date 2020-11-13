@@ -30,7 +30,7 @@ function HeroSection() {
   return (
     <div className='hero-container'>
       <div>
-        <h1 className="title">100 MOST COMMON EXERCISES ON LEETCODE.COM</h1>
+        <h1 className="title">28 MOST COMMON EXERCISES ON LEETCODE.COM</h1>
         <p className="sentence">Remember, Practice Makes Perfect</p>
       </div>
       

@@ -95,7 +95,7 @@ function Questions() {
                 )
             })}
 
-            {!pending &&
+            {/* {!pending &&
                 <div>
                     <p className="underDevelopment">*Under Development*</p>
                     {namesInComplete.map(function(name, index){
@@ -107,9 +107,8 @@ function Questions() {
                         )
                     })} 
                 </div>
-            }
-            
-                             
+            } */}
+                                  
         </div>        
     )
 }

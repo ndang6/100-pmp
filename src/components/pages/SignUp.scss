@@ -89,7 +89,7 @@ $primary: #4D6FE5;
 	transition: all .4s cubic-bezier(.785,.135,.15,.86);
 
 	&.sign-in{
-		max-height: 140px
+		max-height: 120px
 	}
 	
 	&.sign-up{
@@ -97,7 +97,7 @@ $primary: #4D6FE5;
 	}
 	
 	&.forgot{
-		max-height: 70px
+		max-height: 55px
 	}
 
 	> input{
