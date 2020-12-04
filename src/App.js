@@ -38,6 +38,7 @@ import NextPermutation from './components/questions/NextPermutation';
 import WordBreak from './components/questions/WordBreak';
 import SubarraySumEqualsK from './components/questions/SubarraySumEqualsK';
 import KClosestPointsToOrigin from './components/questions/KClosestPointsToOrigin';
+import Fibonacci from './components/concepts/Fibonacci';
 
 function App() {
 
@@ -79,8 +80,10 @@ function App() {
           <Route path='/questions/word-break' exact component={WordBreak} />
           <Route path='/questions/subarray-sum-equals-k' exact component={SubarraySumEqualsK} />
           <Route path='/questions/k-closest-points-to-origin' exact component={KClosestPointsToOrigin} />
+          {/* Premium Contents */}
           <Route path='/tree-traversal' exact component={TreeTraversal} />
           <Route path='/graph-traversal' exact component={GraphTraversal} />
+          <Route path='/fibonacci' exact component={Fibonacci} />
         </div>
       </Router>
     </AuthProvider>

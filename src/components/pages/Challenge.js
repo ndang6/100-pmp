@@ -21,7 +21,13 @@ function Challenge() {
                 <Link to='/graph-traversal'>
                     Graph Traversal
                 </Link>
-            </p>       
+            </p>  
+
+            <p>
+                <Link to='/fibonacci'>
+                    Fibonacci Sequencce
+                </Link>
+            </p>      
         </div>
     )
 }

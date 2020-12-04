@@ -1,0 +1,30 @@
+.fibonacciMain{
+    margin-left: 5px;
+}
+
+.fibonacciMain .prompt{
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.fibonacciMain .CodeMirror{
+    width: 50%;
+    font-family: Arial, monospace;
+    letter-spacing: 0.8px;
+    height: min-content;
+    width: fit-content;
+    margin-bottom: 50px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.fibonacciMain .solution1{
+    display: flex;
+}
+
+.fibonacciMain img{
+    width: min-content;
+    height: min-content;
+}
+
