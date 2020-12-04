@@ -18,8 +18,8 @@ import "codemirror/addon/fold/comment-fold";
 import "codemirror/addon/fold/foldgutter.css";
 import Timer from '../Timer'
 
-function BestTimeToBuyAndSellStocks() {
-    const name = "Best Time to Buy and Sell Stocks"
+function BestTimeToBuyAndSellStock() {
+    const name = "Best Time to Buy and Sell Stock"
     const hashTags = "#array"
     const headerSignature = "public int maxProfit(int[] prices)"
 
@@ -135,4 +135,4 @@ function BestTimeToBuyAndSellStocks() {
 
 }
 
-export default BestTimeToBuyAndSellStocks
+export default BestTimeToBuyAndSellStock

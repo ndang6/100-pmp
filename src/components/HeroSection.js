@@ -26,7 +26,6 @@ function HeroSection() {
     getQuote()
   }, [])
 
-
   return (
     <div className='hero-container'>
       <div>

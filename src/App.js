@@ -28,7 +28,7 @@ import GraphTraversal from './components/concepts/GraphTraversal';
 import ProductOfArrayExceptSelf from './components/questions/ProductOfArrayExceptSelf';
 import ValidParentheses from './components/questions/ValidParentheses';
 import MergeIntervals from './components/questions/MergeIntervals';
-import BestTimeToBuyAndSellStocks from './components/questions/BestTimeToBuyAndSellStocks';
+import BestTimeToBuyAndSellStock from './components/questions/BestTimeToBuyAndSellStock';
 import MergeKSortedLists from './components/questions/MergeKSortedLists';
 import VerifyingAnAlienDictionary from './components/questions/VerifyingAnAlienDictionary';
 import IntegerToEnglishWords from './components/questions/IntegerToEnglishWords';
@@ -69,7 +69,7 @@ function App() {
           <Route path='/questions/product-of-array-except-self' exact component={ProductOfArrayExceptSelf} />
           <Route path='/questions/valid-parentheses' exact component={ValidParentheses} />
           <Route path='/questions/merge-intervals' exact component={MergeIntervals} />
-          <Route path='/questions/best-time-to-buy-and-sell-stocks' exact component={BestTimeToBuyAndSellStocks} />
+          <Route path='/questions/best-time-to-buy-and-sell-stock' exact component={BestTimeToBuyAndSellStock} />
           <Route path='/questions/merge-k-sorted-lists' exact component={MergeKSortedLists} />
           <Route path='/questions/verifying-an-alien-dictionary' exact component={VerifyingAnAlienDictionary} />
           <Route path='/questions/integer-to-english-words' exact component={IntegerToEnglishWords} />
