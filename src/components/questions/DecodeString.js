@@ -33,9 +33,9 @@ function DecodeString() {
     )
 
     // &lt;
-    const hint1 = <p>while (idx &lt; s.length()) ...</p>
-    const hint2 = <p>Character.isDigit(s.charAr(idx)) ...</p>
-    const hint3 = <p>StringBuilder temp = ...{"\n"}res = temp.toString()</p>
+    const hint1 = <p>We need 2 stacks, and index = 0 as a runner</p>
+    const hint2 = <p>while (index &lt; s.length()) {"\n"}Step 1: Count the digits{"\n"}Step 2: Count the characters{"\n"}Step 3: Appending</p>
+    const hint3 = <p>if(Character.isDigit(s.charAt(index)))...{"\n"}else if(s.charAt(index) == '[')...{"\n"}else if(s.charAt(index) == ']')</p>
 
     /* --DO NOT MODIFY--------------------------------------------------------------------------------------- */
     const [hint1Flag, setHint1] = useState(false);
