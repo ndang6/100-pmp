@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './style.css'
+import './style.scss'
 import { Controlled as CodeMirror } from "react-codemirror2";
 import "codemirror/lib/codemirror.css";
 import "codemirror/theme/abcdef.css";
@@ -39,17 +39,11 @@ function NextPermutation() {
     {"\n\n"}We can find the number, then the next step, we will try to find the closest number which is larger than 3 on its right side. In this case it is 4.
     Then we swap 3 and 4, the list turn to 2,4,6,5,3,1.
     {"\n"}Step 3, we sort the numbers at the right of 4, we finally get 2,4,1,3,5,6.</p>
-    // const hint2 = <p>Hint 2</p>
-    // const hint3 = <p>Hint 3</p>
 
     /* --DO NOT MODIFY--------------------------------------------------------------------------------------- */
     const [hint1Flag, setHint1] = useState(false);
-    // const [hint2Flag, setHint2] = useState(false);
-    // const [hint3Flag, setHint3] = useState(false);
 
     const showHint1 = () => setHint1(!hint1Flag);
-    // const showHint2 = () => setHint2(!hint2Flag);
-    // const showHint3 = () => setHint3(!hint3Flag);
 
     var fontSize = 17
 
@@ -62,6 +56,21 @@ function NextPermutation() {
         fontSize = fontSize - 1
         document.getElementsByClassName("main")[0].getElementsByClassName("main1")[0].children[1].style.fontSize = fontSize + "px";       
     }
+
+    const [darkMode, setDarkMode] = useState(false);
+    const toggle = (e) => {
+        if(!darkMode){
+            document.body.style.backgroundColor = "black";
+            document.body.style.color = "white";
+            setDarkMode(true);
+        }
+        else{
+            document.body.style.backgroundColor = "white";
+            document.body.style.color = "black";
+            setDarkMode(false);
+        }    
+    }
+
 
     const formattedName = name.toLowerCase().replaceAll(" ", "-")
     const hyperLink = "https://leetcode.com/problems/" + formattedName
@@ -107,6 +116,7 @@ function NextPermutation() {
                         <div>
                             <button onClick={increaseFontSize}>+</button>  
                             <button onClick={decreaseFontSize}>-</button>
+                            <button className="btn-darkMode" onClick={toggle}>Dark Mode</button>
                         </div>                                                                
                     </div>
                     
@@ -135,14 +145,6 @@ function NextPermutation() {
                         AllowFullScreen>
 
                     </iframe>
-                    {/* <div className="hint2">
-                        <button onClick={showHint2}>Hint 2</button>
-                        { hint2Flag ? hint2 : null}
-                    </div>
-                    <div className="hint3">
-                        <button onClick={showHint3}>Hint 3</button>
-                        { hint3Flag ? hint3 : null}
-                    </div>                    */}
                 </div>
             </div>          
         </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './style.css'
+import './style.scss'
 import { Controlled as CodeMirror } from "react-codemirror2";
 import "codemirror/lib/codemirror.css";
 import "codemirror/theme/abcdef.css";
@@ -57,6 +57,20 @@ function SubarraySumEqualsK() {
         document.getElementsByClassName("main")[0].getElementsByClassName("main1")[0].children[1].style.fontSize = fontSize + "px";       
     }
 
+    const [darkMode, setDarkMode] = useState(false);
+    const toggle = (e) => {
+        if(!darkMode){
+            document.body.style.backgroundColor = "black";
+            document.body.style.color = "white";
+            setDarkMode(true);
+        }
+        else{
+            document.body.style.backgroundColor = "white";
+            document.body.style.color = "black";
+            setDarkMode(false);
+        }    
+    }
+
     const formattedName = name.toLowerCase().replaceAll(" ", "-")
     const hyperLink = "https://leetcode.com/problems/" + formattedName
     const solution =  "https://github.com/ndang6/code-workout-solutions/blob/main/" + formattedName + ".java"
@@ -68,7 +82,7 @@ function SubarraySumEqualsK() {
             <h5 className="tag">{hashTags}</h5>
 
             <div className = "main">
-                <div className="main1">   
+                <div className="main1">
                     <p className="prompt">
                         {prompt}
                     </p>   
@@ -101,6 +115,7 @@ function SubarraySumEqualsK() {
                         <div>
                             <button onClick={increaseFontSize}>+</button>  
                             <button onClick={decreaseFontSize}>-</button>
+                            <button className="btn-darkMode" onClick={toggle}>Dark Mode</button>   
                         </div>                                                                
                     </div>
                     
@@ -112,6 +127,7 @@ function SubarraySumEqualsK() {
                 
                 </div>
                 <div className="main2">
+                
                     <img src={imgPath} alt="hash map" width="500" height="600"/>
                 
                     <div className="hint1">

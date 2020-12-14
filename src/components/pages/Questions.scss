@@ -1,8 +1,19 @@
+.dark-mode{
+    background-color: black;
+
+    p {
+        color: white;
+    }
+} 
+
+
+
 .column-field .num{
     display: flex;
     justify-content: space-between;
     margin-left: 20px;
 }
+
 
 .column-field .difficulty{
     margin-right: 50px;
@@ -11,6 +22,11 @@
 }
 
 .column-field .pickQuestion{
+    margin-left: 10px;
+    padding: 4px;
+}
+
+.column-field .btn-darkMode{
     margin-left: 10px;
     padding: 4px;
 }
