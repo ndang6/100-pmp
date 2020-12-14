@@ -31,9 +31,9 @@ function KClosestPointsToOrigin() {
     )
 
     // &lt;
-    const hint1 = <p>private int helper(int[][] A, int m, int n) ...</p>
-    const hint2 = <p>private int compare(int[] p1, int[] p2) ...</p>
-    const hint3 = <p>int mid = helper(points, m, n); ... return Arrays.copyOfRange(points, 0, K);</p>
+    const hint1 = <p>private int parition(int[][] A, int m, int n) ...{"\n"}private int compare(int[] p1, int[] p2) ...</p>
+    const hint2 = <p>int[] pivot = A[m]{"\n"}while(m &lt; n) ...</p>
+    const hint3 = <p>while (m &lt; n &amp;&amp; compare(A[n], pivot) &gt;= 0) ...{"\n"}while (m &lt; n &amp;&amp; compare(A[m], pivot) &lt;= 0)</p>
 
     /* --DO NOT MODIFY--------------------------------------------------------------------------------------- */
     const [hint1Flag, setHint1] = useState(false);
@@ -112,7 +112,6 @@ function KClosestPointsToOrigin() {
                 
                 </div>
                 <div className="main2">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Quicksort-example.gif" alt="quick-sort"/>
                     <img src={imgPath} alt="hash map" width="500" height="600"/>
 
                     <div className="hint1">
