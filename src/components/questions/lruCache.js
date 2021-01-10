@@ -35,9 +35,9 @@ function LruCache() {
     )
 
     // &lt;
-    const hint1 = <p>Design a class Node (doubly-linked list){"\n"}Create a Head and a Tail node</p>
-    const hint2 = <p>get(): remove(node), then insert(node)</p>
-    const hint3 = <p>put(): remove in hashmap and linked list, then insert(new Node(key, value))</p>
+    const hint1 = <p>Create a Head and a Tail node{"\n"}Keep track of capacity{"\n"}HashMap&#60;node.key, node&#62;</p>
+    const hint2 = <p>private void insert(Node node){"\n"}private void remove(Node node)</p>
+    const hint3 = <p>Implement get() and put()</p>
 
     /* --DO NOT MODIFY--------------------------------------------------------------------------------------- */
     const [hint1Flag, setHint1] = useState(false);
