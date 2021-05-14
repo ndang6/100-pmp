@@ -2,6 +2,7 @@ import React from 'react';
 import './App.scss';
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Route} from 'react-router-dom'
+import { AuthProvider } from './components/pages/Auth';
 import Home from './components/pages/Home'
 import Challenge from './components/pages/Challenge'
 import Questions from './components/pages/Questions'
@@ -12,7 +13,6 @@ import NumberOfIslands from './components/questions/NumberOfIslands';
 import ReorderDataInLogFiles from './components/questions/ReorderDataInLogFiles';
 import LruCache from './components/questions/LruCache';
 import LongestPalindromicSubstring from './components/questions/LongestPalindromicSubstring';
-import { AuthProvider } from './components/pages/Auth';
 import SignUp from './components/pages/SignUp';
 import PrivateRoute from './components/pages/PrivateRoute';
 import DecodeWays from './components/questions/DecodeWays';
@@ -41,17 +41,19 @@ import KClosestPointsToOrigin from './components/questions/KClosestPointsToOrigi
 import Fibonacci from './components/concepts/Fibonacci';
 
 function App() {
-
   return (
     <AuthProvider>
       <Router>
         <Navbar></Navbar>
+        
         <div>
+          {/* 4 pages */}
           <Route path='/' exact component={Home}/>
-          <Route path='/signup' exact component={SignUp} />
-
           <PrivateRoute path='/challenge' exact component={Challenge} />
           <Route path='/questions' exact component={Questions} />
+          <Route path='/signup' exact component={SignUp} />
+
+           {/* all the questions */}  
           <Route path='/questions/two-sum' exact component={TwoSum} />
           <Route path='/questions/add-two-numbers' exact component={AddTwoNumbers} />
           <Route path='/questions/number-of-islands' exact component={NumberOfIslands} />
