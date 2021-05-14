@@ -20,7 +20,7 @@ import Timer from '../Timer'
 
 function SubarraySumEqualsK() {
     const name = "Subarray Sum Equals K"
-    const hashTags = "#brute-force"
+    const hashTags = "#Brute Force #HashMap"
     const headerSignature = "public int subarraySum(int[] nums, int k)"
 
     // \n
@@ -32,9 +32,9 @@ function SubarraySumEqualsK() {
     )
 
     // &lt;
-    const hint1 = <p>2 for loops</p>
-    const hint2 = <p>sum += nums[end];</p>
-    const hint3 = <p>if (sum == k) count++;</p>
+    const hint1 = <p>Naive solution: 2 for loops.{"\n"}For each outer loop, start with sum = 0</p>
+    const hint2 = <p>Optimal solution: use HashMap to store preSum value.{"\n"}Start with preSum.put(0,1)</p>
+    const hint3 = <p>Sliding Window does not work.</p>
 
     /* --DO NOT MODIFY--------------------------------------------------------------------------------------- */
     const [hint1Flag, setHint1] = useState(false);
