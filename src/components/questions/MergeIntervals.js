@@ -32,7 +32,7 @@ function MergeIntervals() {
     )
 
     // &lt;
-    const hint1 = <p>Comparator&lt;int[]&gt; myComp = new Comparator&lt;int[]&gt;() ...</p>
+    const hint1 = <p>Arrays.sort(intervals, (a,b) -&gt; Integer.compare(a[0], b[0]));</p>
     const hint2 = <p>int[] pendingInterval = intervals[0];{"\n"}list.add(pendingInterval);</p>
     const hint3 = <p>pendingInterval[1] = Math.max(pendingInterval[1], currentInterval[1]);</p>
 
